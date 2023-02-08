@@ -7,14 +7,16 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Main {
+    // Code is intended to output the top 20 most used words in between the two lines indicated.
     public static void main(String[] args)
     {
-        // Change file to poem requested
+        // You can change the poem HTML file.
         String file = "The Project Gutenberg eBook of The Raven, by Edgar Allan Poe.htm";
         String output;
 
         Main main = new Main();
         output = main.getHTMLAsString(file);
+        // You can change the start and end to work with another poem.
         output = main.filterToPoem(output, "The Raven", "Shall be lifted nevermore");
         main.mostUsedWords(output);
     }
@@ -49,11 +51,11 @@ public class Main {
         String output = "";
 
         // Create RegEx patterns to filter text to only what's desired
-        Pattern excludeHTMLTagPattern = Pattern.compile("<[^>]*>");
-        Pattern excludeNonTextOrSpacesPattern = Pattern.compile("[^a-zA-Z *]+");
-        Pattern normalizeWhiteSpacePattern = Pattern.compile(" {2,}"); // Sometimes there are multiple spaces between words, only 1 allowed
-        Pattern poemStartPattern = Pattern.compile("^" + poemStart + "$");
-        Pattern poemEndPattern = Pattern.compile("^" + poemEnd + "$");
+        Pattern excludeHTMLTagPattern = Pattern.compile("<[^>]*>"); // We don't care about anything inside HTML tags.
+        Pattern excludeNonTextOrSpacesPattern = Pattern.compile("[^a-zA-Z *]+"); // We only want the words and the spaces between words.
+        Pattern normalizeWhiteSpacePattern = Pattern.compile(" {2,}"); // Sometimes there are multiple spaces between words, needs to only be one.
+        Pattern poemStartPattern = Pattern.compile("^" + poemStart + "$"); // Line should only contain the title from start to end of line.
+        Pattern poemEndPattern = Pattern.compile("^" + poemEnd + "$"); // Line should only contain the end from start to end of line.
         Matcher matcher;
 
 
@@ -62,11 +64,12 @@ public class Main {
         while (scanner.hasNext()) {
             String nextLine = scanner.nextLine();
             matcher = excludeHTMLTagPattern.matcher(nextLine);
-            nextLine = matcher.replaceAll(" ");
+            nextLine = matcher.replaceAll(" "); // Replace any HTML tags with empty spaces.
             matcher = excludeNonTextOrSpacesPattern.matcher(nextLine);
-            nextLine = matcher.replaceAll(" ");
+            nextLine = matcher.replaceAll(" "); // Replace any non-text or spaces with more spaces, like emdashes or punctuation.
             nextLine = nextLine.trim(); // Important to trim excess whitespace at beginning or end, else match won't work.
 
+            // Append start of content to end of content to the output
             if (isPoemContent) {
                 output = output + nextLine + " ";
 
@@ -101,19 +104,20 @@ public class Main {
         String[] wordArray = filteredPoem.split(" ");
         for (String word : wordArray) { // Get word usage into a HashMap containing key->word and value->count
             if (wordOccurrenceMap.containsKey(word)) {
-                Integer wordMapValue = wordOccurrenceMap.get(word);
-                wordOccurrenceMap.put(word, wordMapValue + 1);
+                Integer wordMapCount = wordOccurrenceMap.get(word);
+                wordOccurrenceMap.put(word, wordMapCount + 1); // Increment the count by 1 if word already exists.
             } else {
-                wordOccurrenceMap.put(word, 1);
+                wordOccurrenceMap.put(word, 1); // Start the count at 1 for each new word.
             }
         }
 
         // To sort, convert HashMap to ArrayList
+        // HashMaps aren't sortable, ArrayLists are.
         ArrayList<Map.Entry<String, Integer>> wordOccurrenceList = new ArrayList<>(wordOccurrenceMap.entrySet());
+        Collections.sort(wordOccurrenceList, Map.Entry.comparingByValue(Comparator.reverseOrder())); // Reverse order for DESC. Normally ASC.
 
-        Collections.sort(wordOccurrenceList, Map.Entry.comparingByValue(Comparator.reverseOrder()));
         for (int i = 0; i < 20; i++) {
-            System.out.println(wordOccurrenceList.get(i));
+            System.out.println(wordOccurrenceList.get(i)); // Output top 20 most used words.
         }
     }
 }
