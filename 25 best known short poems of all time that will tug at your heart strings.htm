@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<!--[if IE 8]>
+<html class="no-js g1-off-outside lt-ie10 lt-ie9" id="ie8" lang="en-US"><![endif]-->
+<!--[if IE 9]>
+<html class="no-js g1-off-outside lt-ie10" id="ie9" lang="en-US"><![endif]-->
+<!--[if !IE]><!-->
+<html class="no-js g1-off-outside" lang="en-US"><!--<![endif]-->
+<head><meta charset="UTF-8" /><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(){this.triggerEvents=["keydown","mousedown","mousemove","touchmove","touchstart","touchend","wheel"],this.userEventHandler=this._triggerListener.bind(this),this.touchStartHandler=this._onTouchStart.bind(this),this.touchMoveHandler=this._onTouchMove.bind(this),this.touchEndHandler=this._onTouchEnd.bind(this),this.clickHandler=this._onClick.bind(this),this.interceptedClicks=[],window.addEventListener("pageshow",(e=>{this.persisted=e.persisted})),window.addEventListener("DOMContentLoaded",(()=>{this._preconnect3rdParties()})),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){document.hidden?e._triggerListener():(this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventHandler,{passive:!0}))),window.addEventListener("touchstart",e.touchStartHandler,{passive:!0}),window.addEventListener("mousedown",e.touchStartHandler),document.addEventListener("visibilitychange",e.userEventHandler))}_removeUserInteractionListener(){this.triggerEvents.forEach((e=>window.removeEventListener(e,this.userEventHandler,{passive:!0}))),document.removeEventListener("visibilitychange",this.userEventHandler)}_onTouchStart(e){"HTML"!==e.target.tagName&&(window.addEventListener("touchend",this.touchEndHandler),window.addEventListener("mouseup",this.touchEndHandler),window.addEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.addEventListener("mousemove",this.touchMoveHandler),e.target.addEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"onclick","rocket-onclick"))}_onTouchMove(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler),e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick")}_onTouchEnd(e){window.removeEventListener("touchend",this.touchEndHandler),window.removeEventListener("mouseup",this.touchEndHandler),window.removeEventListener("touchmove",this.touchMoveHandler,{passive:!0}),window.removeEventListener("mousemove",this.touchMoveHandler)}_onClick(e){e.target.removeEventListener("click",this.clickHandler),this._renameDOMAttribute(e.target,"rocket-onclick","onclick"),this.interceptedClicks.push(e),e.preventDefault(),e.stopPropagation(),e.stopImmediatePropagation()}_replayClicks(){window.removeEventListener("touchstart",this.touchStartHandler,{passive:!0}),window.removeEventListener("mousedown",this.touchStartHandler),this.interceptedClicks.forEach((e=>{e.target.dispatchEvent(new MouseEvent("click",{view:e.view,bubbles:!0,cancelable:!0}))}))}_renameDOMAttribute(e,t,n){e.hasAttribute&&e.hasAttribute(t)&&(event.target.setAttribute(n,event.target.getAttribute(t)),event.target.removeAttribute(t))}_triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}_preconnect3rdParties(){let e=[];document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((t=>{if(t.hasAttribute("src")){const n=new URL(t.src).origin;n!==location.origin&&e.push({src:n,crossOrigin:t.crossOrigin||"module"===t.getAttribute("data-rocket-type")})}})),e=[...new Map(e.map((e=>[JSON.stringify(e),e]))).values()],this._batchInjectResourceHints(e,"preconnect")}async _loadEverythingNow(){this.lastBreath=Date.now(),this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async);try{await this._triggerDOMContentLoaded(),await this._triggerWindowLoad()}catch(e){}window.dispatchEvent(new Event("rocket-allScriptsLoaded")),this._replayClicks()}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._littleBreath(),new Promise((t=>{const n=document.createElement("script");[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type"),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t());try{e.parentNode.replaceChild(n,e)}catch(e){t()}}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){this._batchInjectResourceHints([...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async],"preload")}_batchInjectResourceHints(e,t){var n=document.createDocumentFragment();e.forEach((e=>{if(e.src){const i=document.createElement("link");i.href=e.src,i.rel=t,"preconnect"!==t&&(i.as="script"),e.getAttribute&&"module"===e.getAttribute("data-rocket-type")&&(i.crossOrigin=!0),e.crossOrigin&&(i.crossOrigin=e.crossOrigin),n.appendChild(i)}})),document.head.appendChild(n)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._littleBreath(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._littleBreath(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._littleBreath(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._littleBreath(),window.dispatchEvent(new Event("rocket-load")),await this._littleBreath(),window.rocketonload&&window.rocketonload(),await this._littleBreath(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),await this._littleBreath();const e=new Event("rocket-pageshow");e.persisted=this.persisted,window.dispatchEvent(e),await this._littleBreath(),window.rocketonpageshow&&window.rocketonpageshow({persisted:this.persisted})}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,i=document.createRange(),r=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const s=document.createDocumentFragment();i.setStart(s,0),s.appendChild(i.createContextualFragment(t)),r.insertBefore(s,o)}}async _littleBreath(){Date.now()-this.lastBreath>45&&(await this._requestAnimFrame(),this.lastBreath=Date.now())}async _requestAnimFrame(){return document.hidden?new Promise((e=>setTimeout(e))):new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts;e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();</script>
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://hackspirit.com/xmlrpc.php" />
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+<meta name="viewport" content="initial-scale=1.0, minimum-scale=1.0, height=device-height, width=device-width" />
+
+<title>25 best known short poems of all time that will tug at your heart strings</title>
+<link rel="canonical" href="https://hackspirit.com/25-beautiful-short-poems-that-will-tug-at-your-heart-strings/" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="25 beautiful short poems that will tug at your heart strings" />
+<meta property="og:description" content="They say a few words can sum up the wisdom of a thousand and a short poem can do just that. But writing a short poem is easier said than [&hellip;] More" />
+<meta property="og:url" content="https://hackspirit.com/25-beautiful-short-poems-that-will-tug-at-your-heart-strings/" />
+<meta property="og:site_name" content="Hack Spirit" />
+<meta property="article:publisher" content="https://www.facebook.com/hackspiritorg" />
+<meta property="article:published_time" content="2019-03-22T07:27:09+00:00" />
+<meta property="article:modified_time" content="2021-12-15T05:40:32+00:00" />
+<meta property="og:image" content="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1024/h:682/q:auto/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg" />
+<meta property="og:image:width" content="1024" />
+<meta property="og:image:height" content="682" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:creator" content="@hackspiritorg" />
+<meta name="twitter:site" content="@hackspiritorg" />
+<meta name="twitter:label1" content="Written by" />
+<meta name="twitter:data1" content="Jude Paler" />
+<meta name="twitter:label2" content="Est. reading time" />
+<meta name="twitter:data2" content="11 minutes" />
+<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://hackspirit.com/#organization","name":"Hack Spirit","url":"https://hackspirit.com/","sameAs":["https://www.facebook.com/hackspiritorg","https://twitter.com/hackspiritorg"],"logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://hackspirit.com/#/schema/logo/image/","url":"https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:336/h:336/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2020/04/rsz_1hack_spirit_logo-1.jpg","contentUrl":"https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:336/h:336/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2020/04/rsz_1hack_spirit_logo-1.jpg","width":336,"height":336,"caption":"Hack Spirit"},"image":{"@id":"https://hackspirit.com/#/schema/logo/image/"}},{"@type":"WebSite","@id":"https://hackspirit.com/#website","url":"https://hackspirit.com/","name":"Hack Spirit","description":"Simple wisdom for people living busy lives.","publisher":{"@id":"https://hackspirit.com/#organization"},"inLanguage":"en-US"},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://hackspirit.com/25-beautiful-short-poems-that-will-tug-at-your-heart-strings/#primaryimage","url":"https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1024/h:682/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg","contentUrl":"https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1024/h:682/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg","width":1024,"height":682},{"@type":"WebPage","@id":"https://hackspirit.com/25-beautiful-short-poems-that-will-tug-at-your-heart-strings/#webpage","url":"https://hackspirit.com/25-beautiful-short-poems-that-will-tug-at-your-heart-strings/","name":"25 best known short poems of all time that will tug at your heart strings","isPartOf":{"@id":"https://hackspirit.com/#website"},"primaryImageOfPage":{"@id":"https://hackspirit.com/25-beautiful-short-poems-that-will-tug-at-your-heart-strings/#primaryimage"},"datePublished":"2019-03-22T07:27:09+00:00","dateModified":"2021-12-15T05:40:32+00:00","breadcrumb":{"@id":"https://hackspirit.com/25-beautiful-short-poems-that-will-tug-at-your-heart-strings/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://hackspirit.com/25-beautiful-short-poems-that-will-tug-at-your-heart-strings/"]}]},{"@type":"BreadcrumbList","@id":"https://hackspirit.com/25-beautiful-short-poems-that-will-tug-at-your-heart-strings/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://hackspirit.com/"},{"@type":"ListItem","position":2,"name":"25 beautiful short poems that will tug at your heart strings"}]},{"@type":"Article","@id":"https://hackspirit.com/25-beautiful-short-poems-that-will-tug-at-your-heart-strings/#article","isPartOf":{"@id":"https://hackspirit.com/25-beautiful-short-poems-that-will-tug-at-your-heart-strings/#webpage"},"author":{"@id":"https://hackspirit.com/#/schema/person/4435fda3dba26fca4a04c6f720e511d6"},"headline":"25 beautiful short poems that will tug at your heart strings","datePublished":"2019-03-22T07:27:09+00:00","dateModified":"2021-12-15T05:40:32+00:00","mainEntityOfPage":{"@id":"https://hackspirit.com/25-beautiful-short-poems-that-will-tug-at-your-heart-strings/#webpage"},"wordCount":2391,"publisher":{"@id":"https://hackspirit.com/#organization"},"image":{"@id":"https://hackspirit.com/25-beautiful-short-poems-that-will-tug-at-your-heart-strings/#primaryimage"},"thumbnailUrl":"https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1024/h:682/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg","articleSection":["Mindful Living"],"inLanguage":"en-US","copyrightYear":"2019","copyrightHolder":{"@id":"https://hackspirit.com/#organization"}},{"@type":"Person","@id":"https://hackspirit.com/#/schema/person/4435fda3dba26fca4a04c6f720e511d6","name":"Jude Paler","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://hackspirit.com/#/schema/person/image/","url":"https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:96/h:96/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/04/Jude-Paler_avatar.jpg","contentUrl":"https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:96/h:96/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/04/Jude-Paler_avatar.jpg","caption":"Jude Paler"},"description":"I am a poet with a positive outlook in life and a writer with a purpose in mind. I write to express my thoughts so that others will be inspired.","url":"https://hackspirit.com/author/jude/"}]}</script>
+
+<link rel='dns-prefetch' href='//scripts.mediavine.com' />
+<link rel='dns-prefetch' href='//mlhmvq6amqed.i.optimole.com' />
+<link rel='preconnect' href='https://mlhmvq6amqed.i.optimole.com' />
+<link rel="alternate" type="application/rss+xml" title="Hack Spirit &raquo; Feed" href="https://hackspirit.com/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Hack Spirit &raquo; Stories Feed" href="https://hackspirit.com/web-stories/feed/"><script id="hacks-ready">
+			window.advanced_ads_ready=function(e,a){a=a||"complete";var d=function(e){return"interactive"===a?"loading"!==e:"complete"===e};d(document.readyState)?e():document.addEventListener("readystatechange",(function(a){d(a.target.readyState)&&e()}),{once:"interactive"===a})},window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[];		</script>
+<link data-minify="1" rel='stylesheet' id='structured-content-frontend-css' href='https://hackspirit.com/wp-content/cache/min/1/wp-content/plugins/structured-content/dist/blocks.style.build.css?ver=1679558691' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='auto-trigger-next-css-css' href='https://hackspirit.com/wp-content/cache/min/1/wp-content/plugins/auto-advance-for-gravity-forms/css/aafg_styles.css?ver=1679558691' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='activecampaign-form-block-css' href='https://hackspirit.com/wp-content/cache/min/1/wp-content/plugins/activecampaign-subscription-forms/activecampaign-form-block/build/style-index.css?ver=1679558691' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+</style>
+<link data-minify="1" rel='stylesheet' id='mace-gallery-css' href='https://hackspirit.com/wp-content/cache/min/1/wp-content/plugins/media-ace/includes/gallery/css/gallery.min.css?ver=1679558691' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='post-views-counter-frontend-css' href='https://hackspirit.com/wp-content/cache/min/1/wp-content/plugins/post-views-counter/css/frontend.css?ver=1679558691' type='text/css' media='all' />
+<link rel='stylesheet' id='toc-screen-css' href='https://hackspirit.com/wp-content/plugins/table-of-contents-plus/screen.min.css?ver=2106' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='tap-disclosure-notice-css' href='https://hackspirit.com/wp-content/cache/min/1/wp-content/plugins/thirstyaffiliates-pro/js/app/disclosure-notice/dist/disclosure-notice.css?ver=1679558691' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='wpt-twitter-feed-css' href='https://hackspirit.com/wp-content/cache/min/1/wp-content/plugins/wp-to-twitter/css/twitter-feed.css?ver=1679558691' type='text/css' media='all' />
+<link rel='stylesheet' id='g1-main-css' href='https://hackspirit.com/wp-content/themes/bimber/css/9.2.3/styles/original/all-light.min.css?ver=9.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='bimber-single-css' href='https://hackspirit.com/wp-content/themes/bimber/css/9.2.3/styles/original/single-light.min.css?ver=9.2.3' type='text/css' media='all' />
+<link rel='stylesheet' id='bimber-comments-css' href='https://hackspirit.com/wp-content/themes/bimber/css/9.2.3/styles/original/comments-light.min.css?ver=9.2.3' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='bimber-dynamic-style-css' href='https://hackspirit.com/wp-content/cache/min/1/wp-content/uploads/dynamic-style-1671796676.css?ver=1679558691' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='tablepress-default-css' href='https://hackspirit.com/wp-content/cache/min/1/wp-content/plugins/tablepress/css/default.min.css?ver=1679558691' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='-theme-css' href='https://hackspirit.com/wp-content/cache/min/1/wp-content/themes/bimber-child-theme/style.css?ver=1679558691' type='text/css' media='all' />
+<link data-minify="1" rel='stylesheet' id='forget-about-shortcode-buttons-css' href='https://hackspirit.com/wp-content/cache/min/1/wp-content/plugins/forget-about-shortcode-buttons/public/css/button-styles.css?ver=1679558691' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' async="async" data-noptimize="1" data-cfasync="false" src='https://scripts.mediavine.com/tags/hack-spirit.js?ver=6.0.3' id='mv-script-wrapper-js'></script>
+<script type='text/javascript' id='advanced-ads-advanced-js-js-extra'>
+/* <![CDATA[ */
+var advads_options = {"blog_id":"1","privacy":{"enabled":false,"state":"not_needed"}};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/plugins/advanced-ads/public/assets/js/advanced.min.js?ver=1.34.0' id='advanced-ads-advanced-js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/themes/bimber/js/modernizr/modernizr-custom.min.js?ver=3.3.0' id='modernizr-js'></script>
+<link rel="https://api.w.org/" href="https://hackspirit.com/wp-json/" /><link rel="alternate" type="application/json" href="https://hackspirit.com/wp-json/wp/v2/posts/9201" /><link rel='shortlink' href='https://hackspirit.com/?p=9201' />
+<link rel="alternate" type="application/json+oembed" href="https://hackspirit.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhackspirit.com%2F25-beautiful-short-poems-that-will-tug-at-your-heart-strings%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://hackspirit.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fhackspirit.com%2F25-beautiful-short-poems-that-will-tug-at-your-heart-strings%2F&#038;format=xml" />
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript">!function(e,t){(e=t.createElement("script")).src="https://cdn.convertbox.com/convertbox/js/embed.js",e.id="app-convertbox-script",e.async=true,e.dataset.uuid="1838b514-a8f1-4e8f-8d6d-baf8845dd59c",document.getElementsByTagName("head")[0].appendChild(e)}(window,document);</script>
+<script type="rocketlazyloadscript">var cb_wp=cb_wp || {};cb_wp.is_user_logged_in=false;cb_wp.post_data={"id":9201,"tags":[],"post_type":"post","cats":[18]};</script> <style type="text/css" id="cst_font_data">
+					@font-face {font-family: "Charter";font-display: auto;font-fallback: ;font-weight: 400;src: url(https://hackspirit.com/wp-content/uploads/2022/10/charter_regular-webfont.woff) format('woff'), url(https://hackspirit.com/wp-content/uploads/2022/10/charter_regular-webfont.ttf) format('TrueType'), url(https://hackspirit.com/wp-content/uploads/2022/10/charter_regular-webfont.eot) format('eot');} @font-face {font-family: "Fira Sans";font-display: auto;font-fallback: ;font-weight: 800;src: url(https://hackspirit.com/wp-content/uploads/2022/10/fira-sans-v16-latin-800.woff2) format('woff2'), url(https://hackspirit.com/wp-content/uploads/2022/10/fira-sans-v16-latin-800.woff) format('woff'), url(https://hackspirit.com/wp-content/uploads/2022/10/fira-sans-v16-latin-800.ttf) format('TrueType'), url(https://hackspirit.com/wp-content/uploads/2022/10/fira-sans-v16-latin-800.eot) format('eot'), url(https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:auto/h:auto/q:mauto/https://hackspirit.com/wp-content/uploads/2022/10/fira-sans-v16-latin-800.svg) format('svg');}				</style>
+<link rel="preload" href="https://hackspirit.com/wp-content/plugins/g1-socials/css/iconfont/fonts/g1-socials.woff" as="font" type="font/woff" crossorigin="anonymous"><style type="text/css">div#toc_container {width: 662px;}</style><link rel="preload" href="https://wct-2.com/wct.js?type=session" as="script"><script type="text/javascript" data-ezscrex="false" async>(function(w, c, t, u) {
+    w._wct = w._wct || {}; w._wct = u;
+    var s = c.createElement(t);
+    s.type = 'text/javascript'; s.async = true; s.src = 'https://wct-2.com/wct.js?type=session';
+    var r = c.getElementsByTagName(t)[0];
+    r.parentNode.insertBefore(s, r);
+}(window, document, 'script', {
+    'uid' : '7eQ0if',
+    'google_tracking_id' : 'UA-34739875-2',
+    'redirect_through' : 'https://hackspirit.com/go',
+    'proxy' : 'https://wct-2.com',
+    'auto_tagging' : true
+}));</script><script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+		var advadsCfpQueue = [];
+		var advadsCfpAd = function( adID ){
+			if ( 'undefined' == typeof advadsProCfp ) { advadsCfpQueue.push( adID ) } else { advadsProCfp.addElement( adID ) }
+		};
+		</script>
+<style>
+	@font-face {
+		font-family: "bimber";
+							src:url("https://hackspirit.com/wp-content/themes/bimber/css/9.2.3/bimber/fonts/bimber.eot");
+			src:url("https://hackspirit.com/wp-content/themes/bimber/css/9.2.3/bimber/fonts/bimber.eot?#iefix") format("embedded-opentype"),
+			url("https://hackspirit.com/wp-content/themes/bimber/css/9.2.3/bimber/fonts/bimber.woff") format("woff"),
+			url("https://hackspirit.com/wp-content/themes/bimber/css/9.2.3/bimber/fonts/bimber.ttf") format("truetype"),
+			url("https://hackspirit.com/wp-content/themes/bimber/css/9.2.3/bimber/fonts/bimber.svg#bimber") format("svg");
+				font-weight: normal;
+		font-style: normal;
+		font-display: block;
+	}
+	</style>
+
+<script type="rocketlazyloadscript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-NF3DN9C');</script>
+
+
+<meta name="google-site-verification" content="mVTmCA4inMgjZGKJeudOmpSEyji1YvVDyRiP4d-M9zk" />
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+</script>
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+  fbq('init', '1207409719845806', {}, {
+    "agent": "wordpress-6.0.3-3.0.8"
+});
+  </script><script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+  fbq('track', 'PageView', []);
+  </script>
+
+<noscript>
+<img height="1" width="1" style="display:none" alt="fbpx"
+src="https://www.facebook.com/tr?id=1207409719845806&ev=PageView&noscript=1" />
+</noscript>
+
+<style>
+			#wp-admin-bar-pvc-post-views .pvc-graph-container { padding-top: 6px; padding-bottom: 6px; position: relative; display: block; height: 100%; box-sizing: border-box; }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph {
+				display: inline-block;
+				width: 1px;
+				margin-right: 1px;
+				background-color: #ccc;
+				vertical-align: baseline;
+			}
+			#wp-admin-bar-pvc-post-views .pvc-line-graph:hover { background-color: #eee; }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-0 { height: 1% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-1 { height: 5% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-2 { height: 10% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-3 { height: 15% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-4 { height: 20% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-5 { height: 25% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-6 { height: 30% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-7 { height: 35% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-8 { height: 40% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-9 { height: 45% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-10 { height: 50% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-11 { height: 55% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-12 { height: 60% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-13 { height: 65% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-14 { height: 70% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-15 { height: 75% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-16 { height: 80% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-17 { height: 85% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-18 { height: 90% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-19 { height: 95% }
+			#wp-admin-bar-pvc-post-views .pvc-line-graph-20 { height: 100% }
+		</style><style>
+/*
+* Blog Design - AdultMan
+*/
+:root {
+	--g1-itxt-color: #25282c;
+}
+html body {
+	color: #25282c;
+	font-family: 'Charter';
+}
+.entry-tpl-classic-nosidebar .entry-header-01 {
+	max-width: 1140px!important;
+	padding: 0 5px;
+	text-align: center;
+}
+.entry-featured-media-main, 
+.g1-content-narrow {
+	max-width: 840px!important;
+	padding: 0 5px;
+	margin: 10px auto;
+}
+.g1-content-narrow > * {
+	max-width: 100%!important;
+}
+.entry-meta-m .entry-byline {
+	-webkit-flex: unset;
+    -ms-flex: unset;
+    flex: unset;
+}
+.entry-meta-m {
+	justify-content: center;
+	margin: 10px 0 20px 0;
+}
+span.entry-byline.entry-byline-m.entry-byline-with-avatar {
+	display: flex;
+	flex-direction: row;
+}
+.entry-author .avatar {
+	margin-top: -10px;
+	width: 40px;
+	height: 40px;
+    object-fit: cover;
+}
+.entry-meta-m span.entry-date {
+	text-transform: capitalize;
+	font-weight: bold;
+}
+.entry-meta-m span.entry-date time {
+	text-transform: initial;
+	font-weight: normal;
+	margin-left: -3px;
+}
+.entry-meta-m .entry-author:after {
+	content: '|';
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 8px;
+}
+.entry-meta-m .entry-date time:before {
+	content: ':';
+	margin: 0 3px 0 0;
+}
+.bb_affiliate {
+	max-width: 700px;
+    padding: 0 15px;
+    margin: 0 auto 30px;
+    font-size: 16px;
+    text-align: center;
+    font-style: italic;
+}
+.g1-row .author-info {
+	padding-left: 5px;
+	padding-right: 5px;
+	max-width: 840px!important;
+}
+.author-info-inner {
+	border: 1px solid #d1d1d1;
+}
+.author-info .author-overview {
+	padding: 20px 20px 20px 140px;
+}
+.author-info .author-avatar {
+	top: calc(50% - 50px);
+	left: 20px;
+	width: 100px;
+	height: 100px;
+}
+.author-info .author-avatar img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.author-info header .author-title {
+	font-size: 20px;
+}
+.author-info header .author-title a {
+	color: var(--g1-itxt-color);
+	-webkit-transition: opacity 0.2s ease;
+	-o-transition: opacity 0.2s ease;
+	transition: opacity 0.2s ease;
+}
+.author-info header .author-title a:hover {
+	opacity: .75;
+}
+.author-info .author-overview:after {
+	display: none;
+}
+.author-info .author-extras {
+    position: absolute;
+    top: 6px;
+    right: 20px;
+}
+.single .entry-content ul {
+    padding-inline-start: 55px;
+    list-style-position: outside;
+    list-style-image: url("data:image/svg+xml,%3Csvg width='10' height='10' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='5' cy='5' r='2.5' fill='%23000'/%3E%3C/svg%3E");
+}
+.single .entry-content ol {
+    padding-inline-start: 55px;
+    list-style-position: outside;
+}
+@media only screen and (max-width: 800px) {
+	.author-info .author-overview {
+		padding: 20px;
+	}
+	.author-info .author-avatar {
+		position: relative;
+		top: 0;
+		left: 0;
+		margin-bottom: 20px;
+	}
+	.author-info .author-extras {
+		position: relative;
+  	 	top: 0;
+   		right: 0;
+	}
+}
+@media only screen and (max-width: 540px) {
+	.entry-meta-m .entry-byline {
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.entry-meta-m .entry-author {
+		margin-right: 5px;
+		line-height: 40px;
+	}
+	.entry-meta-m .entry-author img {
+		margin-top: 0;
+	}
+	.entry-meta-m .entry-author:after {
+		margin-left: 5px;
+	}
+	.entry-meta-m .entry-date {
+		margin-right: 0;
+	}
+}
+</style><meta name="generator" content="Optimole 3.4.3">
+<script type="rocketlazyloadscript">
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1207409719845806');
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1207409719845806&ev=PageView&noscript=1"
+/></noscript>
+<link rel="icon" href="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:32/h:32/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2020/04/cropped-rsz_1hack_spirit_logo-1.jpg" sizes="32x32" />
+<link rel="icon" href="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:192/h:192/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2020/04/cropped-rsz_1hack_spirit_logo-1.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:180/h:180/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2020/04/cropped-rsz_1hack_spirit_logo-1.jpg" />
+<meta name="msapplication-TileImage" content="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:270/h:270/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2020/04/cropped-rsz_1hack_spirit_logo-1.jpg" />
+<script type="rocketlazyloadscript">if("undefined"!=typeof localStorage){var nsfwItemId=document.getElementsByName("g1:nsfw-item-id");nsfwItemId=nsfwItemId.length>0?nsfwItemId[0].getAttribute("content"):"g1_nsfw_off",window.g1SwitchNSFW=function(e){e?(localStorage.setItem(nsfwItemId,1),document.documentElement.classList.add("g1-nsfw-off")):(localStorage.removeItem(nsfwItemId),document.documentElement.classList.remove("g1-nsfw-off"))};try{var nsfwmode=localStorage.getItem(nsfwItemId);window.g1SwitchNSFW(nsfwmode)}catch(e){}}</script>
+<style type="text/css" id="wp-custom-css">
+			/* Add style for shortcode blockquote */
+.blockquote {
+	text-align: left;
+	background: #f5f5f5;
+	margin: 30px 0;
+	padding: 15px 30px 5px;
+	border-left-width: 10px;
+	border-left-style: solid;
+	border-left-color: #02daf2;
+	letter-spacing: .025em;
+	color: #000;
+	min-height: 32px;
+}
+
+#ip-post-custom-content.ip-post-custom-content .blockquote > * {
+	font-family: Roboto, sans-serif;
+	font-size: 20px;
+	font-weight: 500 !important;
+	line-height: 1.2;
+	margin-bottom: 20px;
+}
+
+article.post .entry-content blockquote:before,
+article.post .entry-content .wp-block-quote:before,
+.single-overlay-stretched-no-sidebar-wrap .wp-block-quote:before {
+	content: none;
+}
+
+article.post .entry-content blockquote,
+article.post .entry-content .wp-block-quote,
+.single-overlay-stretched-no-sidebar-wrap .wp-block-quote {
+	font-family: Roboto, sans-serif;
+	font-size: 20px;
+	font-weight: 500 !important;
+	line-height: 1.2;
+	text-align: left;
+	background: #f5f5f5;
+	margin: 30px auto;
+	padding: 15px 30px 5px 30px;
+	border-left-width: 10px;
+	border-left-style: solid;
+	border-left-color: #02daf2;
+	box-sizing: border-box;
+}
+
+article.post .entry-content blockquote cite,
+article.post .entry-content .wp-block-quote cite,
+.single-overlay-stretched-no-sidebar-wrap .wp-block-quote cite {
+	display: none;
+	visibility: hidden;
+}
+
+/* END Add style for shortcode blockquote */
+.custom-box-ob {
+	border: 3px solid #ff9900;
+	padding: 20px;
+	box-shadow:5px 10px 18px #888888; 
+}
+
+.custom-box-obb {
+	background-color: #FAFAFA;
+	border: 1px solid black;
+	padding: 0px 10px 10px 10px;
+	border-bottom: 10px solid #02DAF2; 
+}
+
+.custom-box-obb-header {
+	background-color: black;
+	color: white;
+	padding: 15px;
+	margin: -1px -11px 20px;
+	font-weight: 800;
+}
+
+.custom-heading-obb {
+	padding-bottom: 5px;
+	border-bottom: 3px solid #ff9900;
+}
+
+.custom-list ul {
+  list-style: none;
+  padding: 0;
+}
+.custom-list li {
+  padding-left: 0.5em;
+	list-style-type:none;
+}
+.custom-list li:before {
+  content: "\f0a9"; 
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.5em;
+  width: 1.5em;
+}
+
+.custom-table {
+	max-width: 840px;
+	border-bottom: 0px;
+}
+
+/* twin-flame post */
+
+.twin-flame-content{
+	margin: 25px 0 30px 0;
+}
+
+.twin-flame-content > li {
+	padding: 5px 0;
+}
+
+.twin-flame-purposes-li,
+.twin-flame-false{
+	list-style-type: disclosure-closed;
+	list-style-position: inside;
+	margin:30px 0 0 15px;
+}
+.twin-flame-purposes-li > li,
+.twin-flame-false > li{
+	margin: 5px 0;
+	padding: 3px 8px;
+	background-color: #f6e9ee;
+}
+.twin-flame-vs-soulmate thead{
+	background-color: #f6e9ee;
+}
+
+
+.twin-flame-vs-soulmate tbody tr td{
+	padding: 20px 25px 25px 5px;
+	color: #020202;
+	text-align: left;
+}
+
+.twin-flame-relationship-toxic tbody tr td {
+	padding: 20px 25px 25px 5px;
+}
+
+.twin-flame-relationship-toxic tbody tr td:nth-child(1) {
+  background: #F6E9EE;
+	border: 1px solid white;
+	text-align: center;
+	vertical-align: middle;
+}
+.twin-flame-relationship-toxic tbody tr td:nth-child(2) {
+	padding-left: 25px;
+}
+
+@media only screen and (max-width: 767px){
+	.twin-flame-content{
+	margin:0;
+	padding-left:10px;
+}
+	.twin-flame-purposes-li,
+	.twin-flame-false{
+			margin:0;
+			padding: 0;
+}
+	.twin-flame-purposes-li > li,
+	.twin-flame-false > li {
+		padding:12px 10px;
+	}
+}		</style>
+<style id="egf-frontend-styles" type="text/css">
+		body, input, select, textarea {color: #2d3842;} .g1-meta {color: #5b5b5b;} p {} h1 {} h2 {} h3 {} h4 {} h5 {} h6 {} .g1-giga {} .g1-mega {} h1, .g1-alpha {} h2, .g1-beta {} h3, .g1-gamma {} h4, .g1-delta {} h5, .g1-epsilon {} h6, .g1-zeta {} .g1-gamma-3rd {} .g1-delta-3rd {} .g1-primary-nav-menu > .menu-item > a {} .sub-menu .menu-item > a {} input[type=submit], input[type=reset], input[type=button], button, .g1-button, .g1-arrow {} .g1-tab, .item-list-tabs a {} blockquote {} 	</style>
+<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+<body data-rsssl=1 class="post-template-default single single-post postid-9201 single-format-standard wp-embed-responsive g1-layout-stretched g1-hoverable g1-has-mobile-logo g1-sidebar-normal elementor-default elementor-kit-50142 aa-prefix-hacks- elementor-page-17427" itemscope="" itemtype="http://schema.org/WebPage">
+<div class="g1-body-inner">
+<div id="page">
+<div class="g1-row g1-row-layout-page g1-hb-row g1-hb-row-normal g1-hb-row-a g1-hb-row-1 g1-hb-full g1-hb-sticky-off g1-hb-shadow-off">
+<div class="g1-row-inner">
+<div class="g1-column g1-dropable">
+<div class="g1-bin-1 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-left">
+
+
+</div>
+</div>
+<div class="g1-bin-2 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-center">
+</div>
+</div>
+<div class="g1-bin-3 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-right">
+</div>
+</div>
+</div>
+</div>
+<div class="g1-row-background"></div>
+</div>
+<div class="g1-sticky-top-wrapper g1-hb-row-2">
+<div class="g1-row g1-row-layout-page g1-hb-row g1-hb-row-normal g1-hb-row-b g1-hb-row-2 g1-hb-full g1-hb-sticky-on g1-hb-shadow-on">
+<div class="g1-row-inner">
+<div class="g1-column g1-dropable">
+<div class="g1-bin-1 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-left">
+<div class="g1-id g1-id-desktop">
+<p class="g1-mega g1-mega-1st site-title">
+<a class="g1-logo-wrapper" href="https://hackspirit.com/" rel="home">
+<picture class="g1-logo g1-logo-default">
+<source media="(min-width: 1025px)" srcset="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:auto/h:auto/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2022/12/hack-spirit-logo.png">
+<source media="(max-width: 1024px)" srcset="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20209%2042%27%2F%3E">
+<img decoding=async src="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:209/h:42/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2022/12/hack-spirit-logo.png" width="209" height="42" alt="Hack Spirit" />
+</picture>
+</a>
+</p>
+</div> 
+<nav id="g1-primary-nav" class="g1-primary-nav"><ul id="g1-primary-nav-menu" class="g1-primary-nav-menu g1-menu-h"><li id="menu-item-23118" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-g1-mega menu-item-23118"><a href="https://hackspirit.com/about/">About</a><div class="sub-menu-wrapper">
+<ul class="sub-menu">
+<li id="menu-item-5772" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5772"><a href="https://hackspirit.com/ebooks/">E-books</a></li>
+<li id="menu-item-17159" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17159"><a href="https://hackspirit.com/affiliate-disclosure/">Affiliate Disclosure</a></li>
+<li id="menu-item-8367" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8367"><a href="https://hackspirit.com/contact">Contact us</a></li>
+</ul>
+</div></li>
+<li id="menu-item-36453" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-g1-mega menu-item-36453"><a href="https://hackspirit.com/articles/">Articles</a><div class="sub-menu-wrapper">
+<ul class="sub-menu">
+<li id="menu-item-36454" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36454"><a href="/">How To For Women</a>
+<ul class="sub-menu">
+<li id="menu-item-36464" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36464"><a href="https://hackspirit.com/category/attracting-men/">Attracting Men</a></li>
+<li id="menu-item-36463" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36463"><a href="https://hackspirit.com/category/advice-for-single-women/">Advice for Single Women</a></li>
+<li id="menu-item-36493" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36493"><a href="https://hackspirit.com/category/women-in-a-relationship/">Women in a Relationship</a></li>
+<li id="menu-item-36490" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36490"><a href="https://hackspirit.com/category/understanding-men/">Understanding Men</a></li>
+</ul>
+</li>
+<li id="menu-item-36455" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36455"><a href="/">How To For Men</a>
+<ul class="sub-menu">
+<li id="menu-item-36465" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36465"><a href="https://hackspirit.com/category/attracting-women/">Attracting Women</a></li>
+<li id="menu-item-36462" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36462"><a href="https://hackspirit.com/category/advice-for-single-men/">Advice for Single Men</a></li>
+<li id="menu-item-36474" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36474"><a href="https://hackspirit.com/category/men-in-a-relationship/">Men in a Relationship</a></li>
+<li id="menu-item-36491" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36491"><a href="https://hackspirit.com/category/understanding-women/">Understanding Women</a></li>
+</ul>
+</li>
+<li id="menu-item-36456" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36456"><a href="/">Relationships</a>
+<ul class="sub-menu">
+<li id="menu-item-36467" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36467"><a href="https://hackspirit.com/category/dating-advice/">Dating Advice</a></li>
+<li id="menu-item-36478" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36478"><a href="https://hackspirit.com/category/relationship-advice/">Relationship Advice</a></li>
+<li id="menu-item-36471" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36471"><a href="https://hackspirit.com/category/marriage-tips/">Marriage Tips</a></li>
+<li id="menu-item-36466" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36466"><a href="https://hackspirit.com/category/cheating-in-relationships/">Cheating in Relationships</a></li>
+</ul>
+</li>
+<li id="menu-item-36457" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36457"><a href="/">Break Ups</a>
+<ul class="sub-menu">
+<li id="menu-item-36469" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36469"><a href="https://hackspirit.com/category/how-to-get-your-ex-back/">How to Get Your Ex Back</a></li>
+<li id="menu-item-36470" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36470"><a href="https://hackspirit.com/category/how-to-move-on-from-a-relationship/">How to Move on From a Relationship</a></li>
+<li id="menu-item-36482" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36482"><a href="https://hackspirit.com/category/should-you-end-a-relationship/">Should You End a Relationship?</a></li>
+<li id="menu-item-36486" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36486"><a href="https://hackspirit.com/category/strengthening-your-relationship/">Strengthening Your Relationship</a></li>
+</ul>
+</li>
+<li id="menu-item-36458" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36458"><a href="/">Life</a>
+<ul class="sub-menu">
+<li id="menu-item-36468" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36468"><a href="https://hackspirit.com/category/eastern-philosophy/">Eastern Philosophy</a></li>
+<li id="menu-item-36492" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36492"><a href="https://hackspirit.com/category/western-philosophy/">Western Philosophy</a></li>
+<li id="menu-item-36473" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36473"><a href="https://hackspirit.com/category/meditation/">Meditation</a></li>
+<li id="menu-item-36475" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-36475"><a href="https://hackspirit.com/category/mindful-living/">Mindful Living</a></li>
+<li id="menu-item-36477" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36477"><a href="https://hackspirit.com/category/personality-traits/">Personality Traits</a></li>
+<li id="menu-item-36480" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36480"><a href="https://hackspirit.com/category/self-improvement/">Self Improvement</a></li>
+<li id="menu-item-36481" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36481"><a href="https://hackspirit.com/category/self-love/">Self Love</a></li>
+<li id="menu-item-36483" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36483"><a href="https://hackspirit.com/category/society/">Society</a></li>
+<li id="menu-item-36487" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36487"><a href="https://hackspirit.com/category/toxic-relationships/">Toxic Relationships</a></li>
+</ul>
+</li>
+<li id="menu-item-36459" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36459"><a href="/">Spirituality</a>
+<ul class="sub-menu">
+<li id="menu-item-36484" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36484"><a href="https://hackspirit.com/category/soulmates/">Soulmates</a></li>
+<li id="menu-item-36488" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36488"><a href="https://hackspirit.com/category/twin-flames/">Twin Flames</a></li>
+<li id="menu-item-36485" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36485"><a href="https://hackspirit.com/category/spiritual-signs/">Spiritual Signs</a></li>
+</ul>
+</li>
+<li id="menu-item-36460" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36460"><a href="/">Reviews</a>
+<ul class="sub-menu">
+<li id="menu-item-36472" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36472"><a href="https://hackspirit.com/category/masterclass/">MasterClass</a></li>
+<li id="menu-item-36476" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36476"><a href="https://hackspirit.com/category/mindvalley-reviews/">Mindvalley</a></li>
+<li id="menu-item-36479" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36479"><a href="https://hackspirit.com/category/relationship-guides/">Relationship Guides</a></li>
+</ul>
+</li>
+</ul>
+</div></li>
+</ul></nav>
+</div>
+</div>
+<div class="g1-bin-2 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-center">
+</div>
+</div>
+<div class="g1-bin-3 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-right">
+</div>
+</div>
+</div>
+</div>
+<div class="g1-row-background"></div>
+</div>
+</div>
+<div class="g1-row g1-row-layout-page g1-hb-row g1-hb-row-normal g1-hb-row-c g1-hb-row-3 g1-hb-full g1-hb-sticky-off g1-hb-shadow-off">
+<div class="g1-row-inner">
+<div class="g1-column g1-dropable">
+<div class="g1-bin-1 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-left">
+</div>
+</div>
+<div class="g1-bin-2 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-center">
+</div>
+</div>
+<div class="g1-bin-3 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-right">
+</div>
+</div>
+</div>
+</div>
+<div class="g1-row-background"></div>
+</div>
+<div class="g1-sticky-top-wrapper g1-hb-row-1">
+<div class="g1-row g1-row-layout-page g1-hb-row g1-hb-row-mobile g1-hb-row-a g1-hb-row-1 g1-hb-boxed g1-hb-sticky-on g1-hb-shadow-off">
+<div class="g1-row-inner">
+<div class="g1-column g1-dropable">
+<div class="g1-bin-1 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-left">
+</div>
+</div>
+<div class="g1-bin-2 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-center">
+</div>
+</div>
+<div class="g1-bin-3 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-right">
+</div>
+</div>
+</div>
+</div>
+<div class="g1-row-background"></div>
+</div>
+</div>
+<div class="g1-row g1-row-layout-page g1-hb-row g1-hb-row-mobile g1-hb-row-b g1-hb-row-2 g1-hb-boxed g1-hb-sticky-off g1-hb-shadow-off">
+<div class="g1-row-inner">
+<div class="g1-column g1-dropable">
+<div class="g1-bin-1 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-left">
+<a class="g1-hamburger g1-hamburger-show  " href="#">
+<span class="g1-hamburger-icon"></span>
+<span class="g1-hamburger-label
+						">Menu</span>
+</a>
+</div>
+</div>
+<div class="g1-bin-2 g1-bin-grow-on">
+<div class="g1-bin g1-bin-align-center">
+<div class="g1-id g1-id-mobile">
+<p class="g1-mega g1-mega-1st site-title">
+<a class="g1-logo-wrapper" href="https://hackspirit.com/" rel="home">
+<picture class="g1-logo g1-logo-default">
+<source media="(max-width: 1024px)" srcset="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:auto/h:auto/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2017/11/hs_web@3x.png">
+<source media="(min-width: 1025px)" srcset="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox%3D%270%200%20209%2042%27%2F%3E">
+<img decoding=async src="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:209/h:42/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2017/11/hs_web@3x.png" width="209" height="42" alt="Hack Spirit" />
+</picture>
+</a>
+</p>
+</div> </div>
+</div>
+<div class="g1-bin-3 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-right">
+</div>
+</div>
+</div>
+</div>
+<div class="g1-row-background"></div>
+</div>
+<div class="g1-row g1-row-layout-page g1-hb-row g1-hb-row-mobile g1-hb-row-c g1-hb-row-3 g1-hb-boxed g1-hb-sticky-off g1-hb-shadow-off">
+<div class="g1-row-inner">
+<div class="g1-column g1-dropable">
+<div class="g1-bin-1 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-left">
+</div>
+</div>
+<div class="g1-bin-2 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-center">
+</div>
+</div>
+<div class="g1-bin-3 g1-bin-grow-off">
+<div class="g1-bin g1-bin-align-right">
+</div>
+</div>
+</div>
+</div>
+<div class="g1-row-background"></div>
+</div>
+<div class="g1-row g1-row-layout-page g1-row-wide g1-row-padding-m">
+<div class="g1-row-background">
+</div>
+<div class="g1-row-inner">
+<div class="g1-column" id="primary">
+<div id="content" role="main">
+<span class="bimber-url-waypoint" data-bimber-post-title="25 beautiful short poems that will tug at your heart strings" data-bimber-post-url="https://hackspirit.com/25-beautiful-short-poems-that-will-tug-at-your-heart-strings/"></span>
+<article id="post-9201" class="entry-tpl-classic-nosidebar post-9201 post type-post status-publish format-standard has-post-thumbnail category-mindful-living mv-content-wrapper" itemscope="" itemtype="http://schema.org/Article">
+<div class="entry-inner">
+<header class="entry-header entry-header-01">
+<div class="entry-before-title">
+</div>
+<h1 class="g1-giga g1-giga-1st entry-title" itemprop="headline">25 beautiful short poems that will tug at your heart strings</h1>
+<div class="bb_affiliate">We sometimes include products we think are useful for our readers. If you buy through links on this page, we may earn a small commission. <a href="https://hackspirit.com/affiliate-disclosure/">Read our affiliate disclosure.</a></div>
+<p class="g1-meta g1-meta-m entry-meta entry-meta-m">
+<span class="entry-byline entry-byline-m entry-byline-with-avatar">
+<span class="entry-author" itemscope="" itemprop="author" itemtype="http://schema.org/Person">
+<span class="entry-meta-label">by</span>
+<a href="https://hackspirit.com/author/jude/" title="Posts by Jude Paler" rel="author">
+<img decoding=async alt='' src='https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:40/h:40/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/04/Jude-Paler_avatar.jpg' srcset='https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:80/h:80/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/04/Jude-Paler_avatar.jpg 2x' class='avatar avatar-40 photo' height='40' width='40' />
+<strong itemprop="name">Jude Paler</strong>
+</a>
+</span>
+<span class="entry-date">Last Updated <time datetime="2021-12-15T05:40:32+00:00" itemprop="dateModified">December 15, 2021, 5:40 am</time></span> </span>
+<span class="entry-stats entry-stats-m">
+</span>
+</p>
+</header>
+<div class="entry-featured-media entry-featured-media-main g1-size-1of1" itemprop="image" itemscope="" itemtype="http://schema.org/ImageObject"><div class="g1-frame"><div class="g1-frame-inner"><img width="1024" height="682" src="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1024/h:682/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg" class="attachment-bimber-classic-1of1 size-bimber-classic-1of1 wp-post-image" alt="" itemprop="contentUrl" srcset="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1024/h:682/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg 1024w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:300/h:200/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg 300w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:768/h:512/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg 768w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:180/h:120/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg 180w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:561/h:374/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg 561w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:242/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg 364w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:728/h:485/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg 728w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:608/h:405/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg 608w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:758/h:505/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg 758w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:72/h:48/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg 72w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:144/h:96/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg 144w" sizes="(max-width: 1024px) 100vw, 1024px" /><span class="g1-frame-icon g1-frame-icon-"></span></div></div><meta itemprop="url" content="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1024/h:682/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/pexels-photo-261842.jpeg" /><meta itemprop="width" content="1024" /><meta itemprop="height" content="682" /></div>
+<div class="g1-content-narrow g1-typography-xl entry-content" itemprop="articleBody">
+<p>They say a few words can sum up the wisdom of a thousand and <a href="https://hackspirit.com/why-is-love-a-popular-subject-in-poetry/">a short poem can do just that</a>.</p>
+<p>But writing a short poem is easier said than done. There is no time for long-winded explanations, the words must be concise.</p>
+<p>A short poem needs meticulous thinking and careful word selection. A short poem is a stylistic choice if you want to make your point straight and clear.</p>
+<p>Here are 25 of the best known short poems that get to the heart quickly:</p>
+<p><a href="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:auto/h:auto/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png"><img decoding=async class="alignnone size-full wp-image-9347" src="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1080/h:1080/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png" alt="" width="1080" height="1080" srcset="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1080/h:1080/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png 1080w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:150/h:150/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png 150w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:300/h:300/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png 300w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:768/h:768/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png 768w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1024/h:1024/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png 1024w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:192/h:192/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png 192w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:384/h:384/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png 384w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:110/h:110/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png 110w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:220/h:220/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png 220w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:561/h:561/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png 561w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:364/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png 364w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:728/h:728/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png 728w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:608/h:608/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png 608w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:758/h:758/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png 758w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:48/h:48/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png 48w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:96/h:96/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems.png 96w" sizes="(max-width: 662px) 100vw, 662px" /></a></p>
+<h2>A Word To Husbands by Ogden Nash</h2>
+<p>To keep your marriage brimming<br />
+With love in the loving cup,<br />
+Whenever you&#8217;re wrong, admit it;<br />
+Whenever you&#8217;re right, shut up.</p>
+<h2>&#8220;Humble and Grumble&#8221; by Eldred Herbert</h2>
+<p>Humble and Grumble were identical twins,<br />
+And Humble was ever so meek;<br />
+Grumble did nothing but grumble all day,<br />
+Some may even call him a freak.</p>
+<p>Humble was happy and everyone&#8217;s friend,<br />
+Grumble was jealous of course;<br />
+Humble was happy to follow the Lord,<br />
+But Grumble, an immoral source.</p>
+<p>Humble was never seen wearing a frown,<br />
+And Grumble, ne&#8217;er seen with a smile;<br />
+Humble won friends by just being himself,<br />
+But, Grumble, he won them by guile.</p>
+<p>So Grumble, please follow Humble, your twin,<br />
+And Humble, don&#8217;t grumble, I pray,<br />
+For grumble will make you like Grumble, your twin,<br />
+Please Grumble, be humble today.</p>
+<h2>&#8220;Messy Room&#8221; by Shel Silverstein</h2>
+<p>Whosever room this is should be ashamed!<br />
+His underwear is hanging on the lamp.<br />
+His raincoat is there in the overstuffed chair,<br />
+And the chair is becoming quite mucky and damp.<br />
+His workbook is wedged in the window,<br />
+His sweater&#8217;s been thrown on the floor.<br />
+His scarf and one ski are beneath the TV,<br />
+And his pants have been carelessly hung on the door.<br />
+His books are all jammed in the closet,<br />
+His vest has been left in the hall.<br />
+A lizard named Ed is asleep in his bed,<br />
+And his smelly old sock has been stuck to the wall.<br />
+Whosever room this is should be ashamed!<br />
+Donald or Robert or Willie or&#8211;<br />
+Huh? You say it&#8217;s mine? Oh, dear,<br />
+I knew it looked familiar!</p>
+<h2>&#8220;I Didn&#8217;t Go To Church Today&#8221; by Ogden Nash</h2>
+<p>I didn&#8217;t go to church today,<br />
+I trust the Lord to understand.<br />
+The surf was swirling blue and white,<br />
+The children swirling on the sand.<br />
+He knows, He knows how brief my stay,<br />
+How brief this spell of summer weather,<br />
+He knows when I am said and done<br />
+We&#8217;ll have plenty of time together</p>
+<h2>&#8220;Now We Are Six&#8221; by A. A. Milne</h2>
+<p>When I was One,<br />
+I had just begun.<br />
+When I was Two,<br />
+I was nearly new.<br />
+When I was Three<br />
+I was hardly me.<br />
+When I was Four,<br />
+I was not much more.<br />
+When I was Five,<br />
+I was just alive.<br />
+But now I am Six,<br />
+I&#8217;m as clever as clever,<br />
+So I think I&#8217;ll be six now for ever and ever.</p>
+<p><strong>QUIZ:</strong> What’s your hidden superpower? We all have a personality trait that makes us special… and important to the world. Discover YOUR secret superpower with my new quiz. <a href="https://go.hackspirit.com/superpower-quiz" target="_blank" rel="noopener">Check out the quiz here</a>.</p>
+<h2><a href="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:auto/h:auto/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png"><img decoding=async class="alignnone size-full wp-image-9348" src="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1080/h:1080/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png" alt="" width="1080" height="1080" srcset="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1080/h:1080/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png 1080w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:150/h:150/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png 150w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:300/h:300/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png 300w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:768/h:768/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png 768w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1024/h:1024/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png 1024w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:192/h:192/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png 192w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:384/h:384/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png 384w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:110/h:110/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png 110w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:220/h:220/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png 220w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:561/h:561/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png 561w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:364/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png 364w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:728/h:728/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png 728w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:608/h:608/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png 608w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:758/h:758/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png 758w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:48/h:48/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png 48w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:96/h:96/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-1.png 96w" sizes="(max-width: 662px) 100vw, 662px" /></a></h2>
+<h2>&#8220;The Rose Family&#8221; by Robert Frost</h2>
+<p>The rose is a rose,<br />
+And was always a rose.<br />
+But the theory now goes<br />
+That the apple’s a rose,<br />
+And the pear is, and so’s<br />
+The plum, I suppose.<br />
+The dear only knows<br />
+What will next prove a rose.<br />
+You, of course, are a rose –<br />
+But were always a rose.</p>
+<h2>&#8220;When You Come&#8221; by Maya Angelou</h2>
+<p>When you come to me, unbidden,<br />
+Beckoning me<br />
+To long-ago rooms,<br />
+Where memories lie.</p>
+<p>Offering me, as to a child, an attic,<br />
+Gatherings of days too few.<br />
+Baubles of stolen kisses.<br />
+Trinkets of borrowed loves.<br />
+Trunks of secret words,</p>
+<p>I CRY.</p>
+<h2>&#8220;Sonnet 29&#8221; by William Shakespeare</h2>
+<p>When, in disgrace with fortune and men’s eyes,<br />
+I all alone beweep my outcast state,<br />
+And trouble deaf heaven with my bootless cries,<br />
+And look upon myself and curse my fate,<br />
+Wishing me like to one more rich in hope,<br />
+Featured like him, like him with friends possessed,<br />
+Desiring this man’s art and that man’s scope<br />
+With what I most enjoy contented least;<br />
+Yet in these thoughts myself almost despising,<br />
+Haply I think on thee, and then my state,<br />
+(Like to the lark at break of day arising<br />
+From sullen earth) sings hymns at heaven’s gate;<br />
+For thy sweet love remembered such wealth brings<br />
+That then I scorn to change my state with kings.</p>
+<h2>&#8220;It&#8217;s All I Have To Bring Today&#8221; by Emily Dickinson</h2>
+<p>It’s all I have to bring today—<br />
+This, and my heart beside—<br />
+This, and my heart, and all the fields—<br />
+And all the meadows wide—<br />
+Be sure you count—should I forget<br />
+Some one the sum could tell—<br />
+This, and my heart, and all the Bees<br />
+Which in the Clover dwell.</p>
+<h2>&#8220;A Glimpse&#8221; by Walt Whitman</h2>
+<p>A glimpse through an interstice caught,<br />
+Of a crowd of workmen and drivers in a bar-room around the stove late of a winter night, and I unremark’d seated in a corner,<br />
+Of a youth who loves me and whom I love, silently approaching and seating himself near, that he may hold me by the hand,<br />
+A long while amid the noises of coming and going, of drinking and oath and smutty jest,<br />
+There we two, content, happy in being together, speaking little, perhaps not a word.</p>
+<h2>&#8220;A Love Song for Lucinda&#8221; by Langston Hughes</h2>
+<p>Love<br />
+Is a ripe plum<br />
+Growing on a purple tree.<br />
+Taste it once<br />
+And the spell of its enchantment<br />
+Will never let you be.</p>
+<p>Love<br />
+Is a bright star<br />
+Glowing in far Southern skies.<br />
+Look too hard<br />
+And its burning flame<br />
+Will always hurt your eyes.</p>
+<p>Love<br />
+Is a high mountain<br />
+Stark in a windy sky.<br />
+If you<br />
+Would never lose your breath<br />
+Do not climb too high.</p>
+<h2>&#8220;I Love You&#8221; by Carl Sandberg</h2>
+<p>I love you for what you are, but I love you yet more for what you are going to be.<br />
+I love you not so much for your realities as for your ideals. I pray for your desires that they may be great, rather than for your satisfactions, which may be so hazardously little.<br />
+A satisfied flower is one whose petals are about to fall. The most beautiful rose is one hardly more than a bud wherein the pangs and ecstasies of desire are working for a larger and finer growth. Not always shall you be what you are now. You are going forward toward something great. I am on the way with you and therefore I love you.</p>
+<h2>&#8220;Sonnet XLIII&#8221; by Elizabeth Barrett Browning</h2>
+<p>How do I love thee? Let me count the ways.<br />
+I love thee to the depth and breadth and height<br />
+My soul can reach, when feeling out of sight<br />
+For the ends of being and ideal grace.<br />
+I love thee to the level of every day’s<br />
+Most quiet need, by sun and candle-light.<br />
+I love thee freely, as men strive for right;<br />
+I love thee purely, as they turn from praise.<br />
+I love thee with the passion put to use<br />
+In my old griefs, and with my childhood’s faith.<br />
+I love thee with a love I seemed to lose<br />
+With my lost saints. I love thee with the breath,<br />
+Smiles, tears, of all my life; and, if God choose,<br />
+I shall but love thee better after death.</p>
+<h2>&#8220;Defeated by Love&#8221; by Rumi</h2>
+<p>The sky was lit<br />
+by the splendor of the moon</p>
+<p>So powerful<br />
+I fell to the ground</p>
+<p>Your love<br />
+has made me sure</p>
+<p>I am ready to forsake<br />
+this worldly life<br />
+and surrender<br />
+to the magnificence<br />
+of your Being</p>
+<h2>&#8220;Love Is A Place&#8221; by E.E. Cummings</h2>
+<p>Love is a place<br />
+&amp; through this place of<br />
+love move<br />
+(with brightness of peace)<br />
+all places</p>
+<p>yes is a world<br />
+&amp; in this world of<br />
+yes live<br />
+(skilfully curled)<br />
+all worlds</p>
+<h2>&#8220;Your Feet&#8221; by Pablo Neruda</h2>
+<p>When I cannot look at your face<br />
+I look at your feet.<br />
+Your feet of arched bone,<br />
+your hard little feet.<br />
+I know that they support you,<br />
+and that your sweet weight<br />
+rises upon them.<br />
+Your waist and your breasts,<br />
+the doubled purple<br />
+of your nipples,<br />
+the sockets of your eyes<br />
+that have just flown away,<br />
+your wide fruit mouth,<br />
+your red tresses,<br />
+my little tower.<br />
+But I love your feet<br />
+only because they walked<br />
+upon the earth and upon<br />
+the wind and upon the waters,<br />
+until they found me.</p>
+<h2>&#8220;Never Give All The Heart&#8221; by W.B Yeats</h2>
+<p>Never give all the heart, for love<br />
+Will hardly seem worth thinking of<br />
+To passionate women if it seem<br />
+Certain, and they never dream<br />
+That it fades out from kiss to kiss;<br />
+For everything that’s lovely is<br />
+But a brief, dreamy, kind delight.<br />
+O never give the heart outright,<br />
+For they, for all smooth lips can say,<br />
+Have given their hearts up to the play.<br />
+And who could play it well enough<br />
+If deaf and dumb and blind with love?<br />
+He that made this knows all the cost,<br />
+For he gave all his heart and lost.</p>
+<h2>&#8220;You Fit Into Me&#8221; by Margaret Atwood</h2>
+<p>you fit into me<br />
+like a hook into an eye</p>
+<p>a fish hook<br />
+an open eye</p>
+<p><strong>QUIZ:</strong> Are you ready to find out your hidden superpower? My epic new quiz will help you discover the truly unique thing you bring to the world. <a href="https://go.hackspirit.com/superpower-quiz" target="_blank" rel="noopener">Click here to take my quiz</a>.</p>
+<h2><a href="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:auto/h:auto/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png"><img decoding=async class="alignnone size-full wp-image-9349" src="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1080/h:1080/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png" alt="" width="1080" height="1080" srcset="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1024/h:1024/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png 1024w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:150/h:150/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png 150w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:300/h:300/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png 300w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:768/h:768/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png 768w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:192/h:192/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png 192w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:384/h:384/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png 384w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:110/h:110/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png 110w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:220/h:220/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png 220w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:561/h:561/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png 561w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:364/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png 364w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:728/h:728/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png 728w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:608/h:608/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png 608w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:758/h:758/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png 758w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:48/h:48/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png 48w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:96/h:96/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Funny-short-poems-2.png 96w" sizes="(max-width: 662px) 100vw, 662px" /></a></h2>
+<h2>&#8220;Fire and Ice&#8221; by Robert Frost</h2>
+<p>Some say the world will end in fire,<br />
+Some say in ice.<br />
+From what I’ve tasted of desire<br />
+I hold with those who favor fire.<br />
+But if it had to perish twice,<br />
+I think I know enough of hate<br />
+To say that for destruction ice<br />
+Is also great<br />
+And would suffice.</p>
+<h2>&#8220;Risk&#8221; by Anais Nin</h2>
+<p>And then the day came,<br />
+when the risk<br />
+to remain tight<br />
+in a bud<br />
+was more painful<br />
+than the risk<br />
+it took<br />
+to blossom.</p>
+<h2>&#8220;Awakening In New York&#8221; by Maya Angelou</h2>
+<p>Curtains forcing their will<br />
+against the wind,<br />
+children sleep,<br />
+exchanging dreams with<br />
+seraphim. The city<br />
+drags itself awake on<br />
+subway straps; and<br />
+I, an alarm, awake as a<br />
+rumor of war<br />
+lie stretching into dawn<br />
+unasked and unheeded.</p>
+<h2>&#8220;Housekeeping&#8221; by Natasha Tretheway</h2>
+<p>We mourn the broken things, chair legs<br />
+wrenched from their seats, chipped plates,<br />
+the threadbare clothes. We work the magic<br />
+of glue, drive the nails, mend the holes.<br />
+We save what we can, melt small pieces<br />
+of soap, gather fallen pecans, keep neck bones<br />
+for soup. Beating rugs against the house,<br />
+we watch dust, lit like stars, spreading<br />
+across the yard. Late afternoon, we draw<br />
+the blinds to cool the rooms, drive the bugs<br />
+out. My mother irons, singing, lost in reverie.<br />
+I mark the pages of a mail-order catalog,<br />
+listen for passing cars. All day we watch<br />
+for the mail, some news from a distant place.</p>
+<h2>&#8220;Church&#8221; by Jacqueline Woodson</h2>
+<p>On Sundays, the preacher gives everyone a chance<br />
+to repent their sins. Miss Edna makes me go<br />
+to church. She wears a bright hat<br />
+I wear my suit. Babies dress in lace.<br />
+Girls my age, some pretty, some not so<br />
+pretty. Old ladies and men nodding.<br />
+Miss Edna every now and then throwing her hand<br />
+in the air. Saying Yes, Lord and Preach!<br />
+I sneak a pen from my back pocket,<br />
+bend down low like I dropped something.<br />
+The chorus marches up behind the preacher<br />
+clapping and humming and getting ready to sing.<br />
+I write the word HOPE on my hand.</p>
+<h2>&#8220;September Tomatoes&#8221; by Karina Borowicz</h2>
+<p>The whiskey stink of rot has settled<br />
+in the garden, and a burst of fruit flies rises<br />
+when I touch the dying tomato plants.<br />
+Still, the claws of tiny yellow blossoms<br />
+flail in the air as I pull the vines up by the roots<br />
+and toss them in the compost.<br />
+It feels cruel. Something in me isn’t ready<br />
+to let go of summer so easily. To destroy<br />
+what I’ve carefully cultivated all these months.<br />
+Those pale flowers might still have time to fruit.<br />
+My great-grandmother sang with the girls of her village<br />
+as they pulled the flax. Songs so old<br />
+and so tied to the season that the very sound<br />
+seemed to turn the weather.</p>
+<h2>&#8220;Good Bones&#8221; by Maggie Smith</h2>
+<p>Life is short, though I keep this from my children.<br />
+Life is short, and I’ve shortened mine<br />
+in a thousand delicious, ill-advised ways,<br />
+a thousand deliciously ill-advised ways<br />
+I’ll keep from my children. The world is at least<br />
+fifty percent terrible, and that’s a conservative<br />
+estimate, though I keep this from my children.<br />
+For every bird there is a stone thrown at a bird.<br />
+For every loved child, a child broken, bagged,<br />
+sunk in a lake. Life is short and the world<br />
+is at least half terrible, and for every kind<br />
+stranger, there is one who would break you,<br />
+though I keep this from my children. I am trying<br />
+to sell them the world. Any decent realtor,<br />
+walking you through a real shithole, chirps on<br />
+about good bones: This place could be beautiful,<br />
+right? You could make this place beautiful.</p>
+<h2>&#8220;The Peace Of Wild Things&#8221; by Wendell Berry</h2>
+<p>When despair for the world grows in me<br />
+and I wake in the night at the least sound<br />
+in fear of what my life and my children’s lives may be,<br />
+I go and lie down where the wood drake<br />
+rests in his beauty on the water, and the great heron feeds.<br />
+I come into the peace of wild things<br />
+who do not tax their lives with forethought<br />
+of grief. I come into the presence of still water.<br />
+And I feel above me the day-blind stars<br />
+waiting with their light. For a time<br />
+I rest in the grace of the world, and am free.</p>
+<p><strong>QUIZ:</strong> What’s your hidden superpower? We all have a personality trait that makes us special… and important to the world. Discover YOUR secret superpower with my new quiz. <a href="https://go.hackspirit.com/superpower-quiz" target="_blank" rel="noopener">Check out the quiz here</a>.</p>
+<h2>You may also like reading:</h2>
+<ul>
+<li><a href="https://hackspirit.com/how-a-regular-guy-became-his-own-life-coach/">How a regular guy became his own life coach (and how you can too)</a></li>
+<li><a href="https://hackspirit.com/buddhist-teachings/">I was deeply unhappy&#8230;then I discovered this one Buddhist teaching</a></li>
+<li><a href="https://hackspirit.com/how-mental-toughness-helped-j-k-rowling-succeed/">What J.K Rowling can teach us about mental toughness</a></li>
+</ul>
+<div class="hacks-3a9aede1b5ac3a40a0b7a252c1a63b6f hacks-after-content-vid" id="hacks-3a9aede1b5ac3a40a0b7a252c1a63b6f"></div> </div>
+</div>
+<div class="entry-after-content g1-row g1-row-layout-page">
+<div class="g1-row-inner">
+<div class="g1-column">
+<section class="g1-row author-info" itemscope="" itemtype="http://schema.org/Person">
+<div class="g1-row-inner author-info-inner">
+<div class="g1-column author-overview">
+<figure class="author-avatar">
+<a href="https://hackspirit.com/author/jude/">
+<img decoding=async alt='' src='https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:100/h:100/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/04/Jude-Paler_avatar.jpg' srcset='https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:100/h:100/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2019/04/Jude-Paler_avatar.jpg 2x' class='avatar avatar-100 photo' height='100' width='100' />
+</a>
+</figure>
+<header>
+<h2 class="g1-gamma g1-gamma-1st author-title"><a href="https://hackspirit.com/author/jude/"><span itemprop="name">Jude Paler</span></a></h2>
+</header>
+<div itemprop="description" class="author-bio">
+<p>I am a poet with a positive outlook in life and a writer with a purpose in mind. I write to express my thoughts so that others will be inspired.</p>
+</div>
+<div class="author-extras">
+</div>
+</div>
+</div>
+</section>
+<aside class="g1-more-from">
+<h2 class="g1-delta g1-delta-2nd g1-collection-title"><span>More From: <a href="https://hackspirit.com/category/mindful-living/">Mindful Living</a></span></h2> <div class="g1-collection g1-collection-columns-2">
+<div class="g1-collection-viewport">
+<ul class="g1-collection-items">
+<li class="g1-collection-item g1-collection-item-1of3">
+<article class="entry-tpl-grid entry-tpl-grid-m post-59946 post type-post status-publish format-standard has-post-thumbnail category-mindful-living mv-content-wrapper">
+<div class="entry-featured-media "><a title="10 signs you’re a highly spiritual person (without being dogmatic)" class="g1-frame" href="https://hackspirit.com/signs-youre-a-spiritual-person/"><div class="g1-frame-inner"><img width="364" height="205" src="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:205/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/spiritual-person.png" class="attachment-bimber-grid-standard size-bimber-grid-standard wp-post-image" alt="" loading="lazy" srcset="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:192/h:108/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/spiritual-person.png 192w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:384/h:216/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/spiritual-person.png 384w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:205/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/spiritual-person.png 364w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:728/h:409/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/spiritual-person.png 728w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:561/h:316/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/spiritual-person.png 561w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1122/h:631/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/spiritual-person.png 1122w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:758/h:426/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/spiritual-person.png 758w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1152/h:648/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/spiritual-person.png 1152w" sizes="(max-width: 364px) 100vw, 364px" /><span class="g1-frame-icon g1-frame-icon-"></span></div></a></div>
+<div class="entry-body">
+<header class="entry-header">
+<div class="entry-before-title">
+</div>
+<h3 class="g1-gamma g1-gamma-1st entry-title"><a href="https://hackspirit.com/signs-youre-a-spiritual-person/" rel="bookmark">10 signs you’re a highly spiritual person (without being dogmatic)</a></h3>
+</header>
+<footer>
+<p class="g1-meta entry-meta entry-byline entry-byline-with-avatar">
+<span class="entry-author">
+<span class="entry-meta-label">by</span>
+<a href="https://hackspirit.com/author/paulbrian/" title="Posts by Paul Brian" rel="author">
+<img alt='' src='https://secure.gravatar.com/avatar/25305c66c64b0913daf579362b093da8?s=30&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/25305c66c64b0913daf579362b093da8?s=60&#038;d=mm&#038;r=g 2x' class='avatar avatar-30 photo' height='30' width='30' />
+<strong>Paul Brian</strong>
+</a>
+</span>
+<time class="entry-date" datetime="2023-03-26T11:35:29+00:00">March 26, 2023, 11:35 am</time> </p>
+</footer>
+</div>
+</article>
+</li>
+<li class="g1-collection-item g1-collection-item-1of3">
+<article class="entry-tpl-grid entry-tpl-grid-m post-59833 post type-post status-publish format-standard has-post-thumbnail category-mindful-living category-self-improvement mv-content-wrapper">
+<div class="entry-featured-media "><a title="18 ways to invest in yourself as a woman" class="g1-frame" href="https://hackspirit.com/how-to-invest-in-yourself-as-a-woman/"><div class="g1-frame-inner"><img width="364" height="205" src="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:205/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/newimagesize-2023-03-24T172451.143.png" class="attachment-bimber-grid-standard size-bimber-grid-standard wp-post-image" alt="" loading="lazy" srcset="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:192/h:108/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/newimagesize-2023-03-24T172451.143.png 192w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:384/h:216/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/newimagesize-2023-03-24T172451.143.png 384w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:205/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/newimagesize-2023-03-24T172451.143.png 364w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:728/h:409/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/newimagesize-2023-03-24T172451.143.png 728w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:561/h:316/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/newimagesize-2023-03-24T172451.143.png 561w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1122/h:631/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/newimagesize-2023-03-24T172451.143.png 1122w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:758/h:426/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/newimagesize-2023-03-24T172451.143.png 758w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1152/h:648/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/newimagesize-2023-03-24T172451.143.png 1152w" sizes="(max-width: 364px) 100vw, 364px" /><span class="g1-frame-icon g1-frame-icon-"></span></div></a></div>
+<div class="entry-body">
+<header class="entry-header">
+<div class="entry-before-title">
+</div>
+<h3 class="g1-gamma g1-gamma-1st entry-title"><a href="https://hackspirit.com/how-to-invest-in-yourself-as-a-woman/" rel="bookmark">18 ways to invest in yourself as a woman</a></h3>
+</header>
+<footer>
+<p class="g1-meta entry-meta entry-byline entry-byline-with-avatar">
+<span class="entry-author">
+<span class="entry-meta-label">by</span>
+<a href="https://hackspirit.com/author/kiran/" title="Posts by Kiran Athar" rel="author">
+<img decoding=async alt='' src='https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:30/h:30/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2020/08/Kiran-Athar_avatar.jpeg' srcset='https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:60/h:60/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2020/08/Kiran-Athar_avatar.jpeg 2x' class='avatar avatar-30 photo' height='30' width='30' />
+<strong>Kiran Athar</strong>
+</a>
+</span>
+<span class="entry-date">Last Updated <time datetime="2023-03-24T10:26:05+00:00">March 24, 2023, 10:26 am</time></span> </p>
+</footer>
+</div>
+</article>
+</li>
+<li class="g1-collection-item g1-collection-item-1of3">
+<article class="entry-tpl-grid entry-tpl-grid-m post-59602 post type-post status-publish format-standard has-post-thumbnail category-mindful-living mv-content-wrapper">
+<div class="entry-featured-media "><a title="12 tips to find like-minded people (who understand you)" class="g1-frame" href="https://hackspirit.com/tips-to-find-like-minded-people-who-understand-you/"><div class="g1-frame-inner"><img width="364" height="205" src="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:205/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/tips-to-find-like-minded-people-who-understand-you.png" class="attachment-bimber-grid-standard size-bimber-grid-standard wp-post-image" alt="" loading="lazy" srcset="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:192/h:108/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/tips-to-find-like-minded-people-who-understand-you.png 192w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:384/h:216/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/tips-to-find-like-minded-people-who-understand-you.png 384w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:205/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/tips-to-find-like-minded-people-who-understand-you.png 364w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:728/h:409/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/tips-to-find-like-minded-people-who-understand-you.png 728w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:561/h:316/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/tips-to-find-like-minded-people-who-understand-you.png 561w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1122/h:631/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/tips-to-find-like-minded-people-who-understand-you.png 1122w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:758/h:426/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/tips-to-find-like-minded-people-who-understand-you.png 758w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1152/h:648/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/tips-to-find-like-minded-people-who-understand-you.png 1152w" sizes="(max-width: 364px) 100vw, 364px" /><span class="g1-frame-icon g1-frame-icon-"></span></div></a></div>
+<div class="entry-body">
+<header class="entry-header">
+<div class="entry-before-title">
+</div>
+<h3 class="g1-gamma g1-gamma-1st entry-title"><a href="https://hackspirit.com/tips-to-find-like-minded-people-who-understand-you/" rel="bookmark">12 tips to find like-minded people (who understand you)</a></h3>
+</header>
+<footer>
+<p class="g1-meta entry-meta entry-byline entry-byline-with-avatar">
+<span class="entry-author">
+<span class="entry-meta-label">by</span>
+<a href="https://hackspirit.com/author/pearlnash/" title="Posts by Pearl Nash" rel="author">
+<img decoding=async alt='' src='https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:30/h:30/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2017/11/Pearl-Nash_avatar.jpg' srcset='https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:auto/h:auto/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2017/11/Pearl-Nash_avatar.jpg 2x' class='avatar avatar-30 photo' height='30' width='30' />
+<strong>Pearl Nash</strong>
+</a>
+</span>
+<time class="entry-date" datetime="2023-03-21T15:36:17+00:00">March 21, 2023, 3:36 pm</time> </p>
+</footer>
+</div>
+</article>
+</li>
+<li class="g1-collection-item g1-collection-item-1of3">
+<article class="entry-tpl-grid entry-tpl-grid-m post-59381 post type-post status-publish format-standard has-post-thumbnail category-mindful-living mv-content-wrapper">
+<div class="entry-featured-media "><a title="How to live a life that is aligned with your true self: 10 important tips" class="g1-frame" href="https://hackspirit.com/how-to-live-a-life-that-is-aligned-with-your-true-self/"><div class="g1-frame-inner"><img width="364" height="205" src="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:205/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/life-aligned-with-your-true-self.png" class="attachment-bimber-grid-standard size-bimber-grid-standard wp-post-image" alt="" loading="lazy" srcset="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:192/h:108/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/life-aligned-with-your-true-self.png 192w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:384/h:216/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/life-aligned-with-your-true-self.png 384w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:205/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/life-aligned-with-your-true-self.png 364w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:728/h:409/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/life-aligned-with-your-true-self.png 728w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:561/h:316/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/life-aligned-with-your-true-self.png 561w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1122/h:631/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/life-aligned-with-your-true-self.png 1122w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:758/h:426/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/life-aligned-with-your-true-self.png 758w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1152/h:648/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/life-aligned-with-your-true-self.png 1152w" sizes="(max-width: 364px) 100vw, 364px" /><span class="g1-frame-icon g1-frame-icon-"></span></div></a></div>
+<div class="entry-body">
+<header class="entry-header">
+<div class="entry-before-title">
+</div>
+<h3 class="g1-gamma g1-gamma-1st entry-title"><a href="https://hackspirit.com/how-to-live-a-life-that-is-aligned-with-your-true-self/" rel="bookmark">How to live a life that is aligned with your true self: 10 important tips</a></h3>
+</header>
+<footer>
+<p class="g1-meta entry-meta entry-byline entry-byline-with-avatar">
+<span class="entry-author">
+<span class="entry-meta-label">by</span>
+<a href="https://hackspirit.com/author/pearlnash/" title="Posts by Pearl Nash" rel="author">
+<img decoding=async alt='' src='https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:30/h:30/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2017/11/Pearl-Nash_avatar.jpg' srcset='https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:auto/h:auto/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2017/11/Pearl-Nash_avatar.jpg 2x' class='avatar avatar-30 photo' height='30' width='30' />
+<strong>Pearl Nash</strong>
+</a>
+</span>
+<time class="entry-date" datetime="2023-03-18T06:09:13+00:00">March 18, 2023, 6:09 am</time> </p>
+</footer>
+</div>
+</article>
+</li>
+<li class="g1-collection-item g1-collection-item-1of3">
+<article class="entry-tpl-grid entry-tpl-grid-m post-59248 post type-post status-publish format-standard has-post-thumbnail category-mindful-living category-personality-traits mv-content-wrapper">
+<div class="entry-featured-media "><a title="8 habits to break for a more fulfilling life" class="g1-frame" href="https://hackspirit.com/habits-to-break-for-a-more-fulfilling-life/"><div class="g1-frame-inner"><img width="364" height="205" src="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:205/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/more-fulfilling-life.png" class="attachment-bimber-grid-standard size-bimber-grid-standard wp-post-image" alt="" loading="lazy" srcset="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:192/h:108/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/more-fulfilling-life.png 192w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:384/h:216/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/more-fulfilling-life.png 384w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:205/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/more-fulfilling-life.png 364w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:728/h:409/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/more-fulfilling-life.png 728w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:561/h:316/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/more-fulfilling-life.png 561w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1122/h:631/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/more-fulfilling-life.png 1122w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:758/h:426/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/more-fulfilling-life.png 758w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1152/h:648/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/more-fulfilling-life.png 1152w" sizes="(max-width: 364px) 100vw, 364px" /><span class="g1-frame-icon g1-frame-icon-"></span></div></a></div>
+<div class="entry-body">
+<header class="entry-header">
+<div class="entry-before-title">
+</div>
+<h3 class="g1-gamma g1-gamma-1st entry-title"><a href="https://hackspirit.com/habits-to-break-for-a-more-fulfilling-life/" rel="bookmark">8 habits to break for a more fulfilling life</a></h3>
+</header>
+<footer>
+<p class="g1-meta entry-meta entry-byline entry-byline-with-avatar">
+<span class="entry-author">
+<span class="entry-meta-label">by</span>
+<a href="https://hackspirit.com/author/paulbrian/" title="Posts by Paul Brian" rel="author">
+<img alt='' src='https://secure.gravatar.com/avatar/25305c66c64b0913daf579362b093da8?s=30&#038;d=mm&#038;r=g' srcset='https://secure.gravatar.com/avatar/25305c66c64b0913daf579362b093da8?s=60&#038;d=mm&#038;r=g 2x' class='avatar avatar-30 photo' height='30' width='30' />
+<strong>Paul Brian</strong>
+</a>
+</span>
+<span class="entry-date">Last Updated <time datetime="2023-03-17T12:11:50+00:00">March 17, 2023, 12:11 pm</time></span> </p>
+</footer>
+</div>
+</article>
+</li>
+<li class="g1-collection-item g1-collection-item-1of3">
+<article class="entry-tpl-grid entry-tpl-grid-m post-59153 post type-post status-publish format-standard has-post-thumbnail category-mindful-living category-personality-traits mv-content-wrapper">
+<div class="entry-featured-media "><a title="The art of small talk: 10 tips for making conversation with anyone" class="g1-frame" href="https://hackspirit.com/the-art-of-small-talk/"><div class="g1-frame-inner"><img width="364" height="205" src="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:205/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/the-art-of-small-talk.png" class="attachment-bimber-grid-standard size-bimber-grid-standard wp-post-image" alt="" loading="lazy" srcset="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:192/h:108/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/the-art-of-small-talk.png 192w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:384/h:216/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/the-art-of-small-talk.png 384w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:205/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/the-art-of-small-talk.png 364w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:728/h:409/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/the-art-of-small-talk.png 728w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:561/h:316/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/the-art-of-small-talk.png 561w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1122/h:631/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/the-art-of-small-talk.png 1122w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:758/h:426/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/the-art-of-small-talk.png 758w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1152/h:648/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2023/03/the-art-of-small-talk.png 1152w" sizes="(max-width: 364px) 100vw, 364px" /><span class="g1-frame-icon g1-frame-icon-"></span></div></a></div>
+<div class="entry-body">
+<header class="entry-header">
+<div class="entry-before-title">
+</div>
+<h3 class="g1-gamma g1-gamma-1st entry-title"><a href="https://hackspirit.com/the-art-of-small-talk/" rel="bookmark">The art of small talk: 10 tips for making conversation with anyone</a></h3>
+</header>
+<footer>
+<p class="g1-meta entry-meta entry-byline entry-byline-with-avatar">
+<span class="entry-author">
+<span class="entry-meta-label">by</span>
+<a href="https://hackspirit.com/author/daniel-mabanta/" title="Posts by Daniel Mabanta" rel="author">
+<img decoding=async alt='' src='https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:30/h:30/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2023/02/daniel-mabanta_avatar.jpg' srcset='https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:60/h:60/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2023/02/daniel-mabanta_avatar.jpg 2x' class='avatar avatar-30 photo' height='30' width='30' />
+<strong>Daniel Mabanta</strong>
+</a>
+</span>
+<time class="entry-date" datetime="2023-03-15T10:43:28+00:00">March 15, 2023, 10:43 am</time> </p>
+</footer>
+</div>
+</article>
+</li>
+</ul>
+</div>
+</div>
+</aside>
+<meta itemprop="mainEntityOfPage" content="https://hackspirit.com/25-beautiful-short-poems-that-will-tug-at-your-heart-strings/" />
+<meta itemprop="datePublished" content="2019-03-22T07:27:09" />
+<span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+<meta itemprop="name" content="Hack Spirit" />
+<meta itemprop="url" content="https://hackspirit.com" />
+<span itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+<meta itemprop="url" content="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:auto/h:auto/q:mauto/f:avif/https://hackspirit.com/wp-content/uploads/2022/12/hack-spirit-logo.png" />
+</span>
+</span>
+<span class="bimber-load-next-post"><a data-bimber-analytics-href="https://hackspirit.com/how-to-stop-overthinking/" href="https://hackspirit.com/how-to-stop-overthinking/" rel="prev">Next post</a><i class="g1-collection-more-spinner"></i></span> </div>
+</div>
+</div>
+</article>
+<a class="g1-teaser g1-teaser-prev" href="https://hackspirit.com/how-to-love-someone/">
+<div class="g1-teaser-arrow"></div>
+<article class="entry-tpl-listxxs post-9590 post type-post status-publish format-standard has-post-thumbnail category-relationship-advice tag-female-relationships tag-recommends mv-content-wrapper">
+<div class="entry-featured-media "><div class="g1-frame"><div class="g1-frame-inner"><img width="150" height="150" src="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:150/h:150/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2018/01/shutterstock_559670986.jpg" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:150/h:150/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2018/01/shutterstock_559670986.jpg 150w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:192/h:192/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2018/01/shutterstock_559670986.jpg 192w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:384/h:384/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2018/01/shutterstock_559670986.jpg 384w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:110/h:110/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2018/01/shutterstock_559670986.jpg 110w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:220/h:220/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2018/01/shutterstock_559670986.jpg 220w" sizes="(max-width: 150px) 100vw, 150px" /><span class="g1-frame-icon g1-frame-icon-"></span></div></div></div>
+<header class="entry-header">
+<h3 class="g1-epsilon g1-epsilon-1st entry-title">How to love someone deeply: 6 no-nonsense tips</h3> </header>
+</article>
+</a>
+<a class="g1-teaser g1-teaser-next" href="https://hackspirit.com/48-shel-silverstein-quotes-that-will-make-you-smile-and-think/">
+<div class="g1-teaser-arrow"></div>
+<article class="entry-tpl-listxxs post-9515 post type-post status-publish format-standard has-post-thumbnail category-mindful-living mv-content-wrapper">
+<div class="entry-featured-media "><div class="g1-frame"><div class="g1-frame-inner"><img width="150" height="150" src="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:150/h:150/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Shel-SIlverstein-Quotes-4.png" class="attachment-thumbnail size-thumbnail wp-post-image" alt="" loading="lazy" srcset="https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:1024/h:1024/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Shel-SIlverstein-Quotes-4.png 1024w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:150/h:150/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Shel-SIlverstein-Quotes-4.png 150w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:300/h:300/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Shel-SIlverstein-Quotes-4.png 300w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:768/h:768/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Shel-SIlverstein-Quotes-4.png 768w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:192/h:192/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Shel-SIlverstein-Quotes-4.png 192w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:384/h:384/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Shel-SIlverstein-Quotes-4.png 384w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:110/h:110/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Shel-SIlverstein-Quotes-4.png 110w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:220/h:220/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Shel-SIlverstein-Quotes-4.png 220w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:561/h:561/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Shel-SIlverstein-Quotes-4.png 561w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:364/h:364/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Shel-SIlverstein-Quotes-4.png 364w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:728/h:728/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Shel-SIlverstein-Quotes-4.png 728w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:608/h:608/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Shel-SIlverstein-Quotes-4.png 608w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:758/h:758/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Shel-SIlverstein-Quotes-4.png 758w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:48/h:48/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Shel-SIlverstein-Quotes-4.png 48w, https://mlhmvq6amqed.i.optimole.com/HIId8M4.WANK~27a14/w:96/h:96/q:mauto/rt:fill/g:ce/f:avif/https://hackspirit.com/wp-content/uploads/2019/03/Shel-SIlverstein-Quotes-4.png 96w" sizes="(max-width: 150px) 100vw, 150px" /><span class="g1-frame-icon g1-frame-icon-"></span></div></div></div>
+<header class="entry-header">
+<h3 class="g1-epsilon g1-epsilon-1st entry-title">48 Shel Silverstein quotes that will make you smile and think</h3> </header>
+</article>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class=" g1-prefooter g1-prefooter-3cols g1-row g1-row-layout-page">
+<div class="g1-row-inner">
+<div class="g1-column g1-column-1of3">
+<aside id="text-14" class="widget widget_text"><header><h2 class="g1-delta g1-delta-2nd widgettitle"><span>About Hack Spirit</span></h2></header> <div class="textwidget"><p>Hack Spirit is one of the leading authorities providing practical and accessible relationship advice. It was founded by Lachlan Brown in 2016.</p>
+<p>© Hack Spirit. All rights reserved. The material on this site may not be reproduced, distributed, transmitted, cached or otherwise used, except as expressly permitted in writing by Brown Brothers Media Pte. Ltd.</p>
+</div>
+</aside> </div>
+<div class="g1-column g1-column-1of3">
+<aside id="nav_menu-4" class="widget widget_nav_menu"><header><h2 class="g1-delta g1-delta-2nd widgettitle"><span>Explore</span></h2></header><div class="menu-footer-container"><ul id="menu-footer" class="menu"><li id="menu-item-4063" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4063"><a href="https://hackspirit.com/privacy-policy/">Privacy Policy</a></li>
+<li id="menu-item-4064" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4064"><a href="https://hackspirit.com/terms-of-use/">Terms of Use</a></li>
+<li id="menu-item-17160" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17160"><a href="https://hackspirit.com/affiliate-disclosure/">Affiliate Disclosure</a></li>
+<li id="menu-item-4065" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4065"><a href="https://hackspirit.com/contact/">Contact Us</a></li>
+</ul></div></aside> </div>
+<div class="g1-column g1-column-1of3">
+<aside id="nav_menu-5" class="widget widget_nav_menu"><header><h2 class="g1-delta g1-delta-2nd widgettitle"><span>Social</span></h2></header><div class="menu-social-links-container"><ul id="menu-social-links" class="menu"><li id="menu-item-11210" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11210"><a href="https://facebook.com/hackspiritorg">Facebook</a></li>
+<li id="menu-item-11211" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-11211"><a href="https://twitter.com/lachybe">Twitter</a></li>
+</ul></div></aside> </div>
+</div>
+<div class="g1-row-background">
+<div class="g1-row-background-media">
+</div>
+</div>
+</div>
+<div class="g1-footer g1-row g1-row-layout-page">
+<div class="g1-row-inner">
+<div class="g1-column">
+<p class="g1-footer-text"></p>
+</div>
+</div>
+<div class="g1-row-background">
+</div>
+</div>
+<a href="#page" class="g1-back-to-top">Back to Top</a>
+</div>
+<div class="g1-canvas-overlay">
+</div>
+</div>
+<div id="g1-breakpoint-desktop">
+</div>
+<div class="g1-canvas g1-canvas-global g1-canvas-no-js">
+<div class="g1-canvas-inner">
+<div class="g1-canvas-content">
+<a class="g1-canvas-toggle" href="#">Close</a>
+
+<nav id="g1-canvas-primary-nav" class="g1-primary-nav"><ul id="g1-canvas-primary-nav-menu" class="g1-primary-nav-menu g1-menu-v"><li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-23118"><a href="https://hackspirit.com/about/">About</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5772"><a href="https://hackspirit.com/ebooks/">E-books</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-17159"><a href="https://hackspirit.com/affiliate-disclosure/">Affiliate Disclosure</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-8367"><a href="https://hackspirit.com/contact">Contact us</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36453"><a href="https://hackspirit.com/articles/">Articles</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36454"><a href="/">How To For Women</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36464"><a href="https://hackspirit.com/category/attracting-men/">Attracting Men</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36463"><a href="https://hackspirit.com/category/advice-for-single-women/">Advice for Single Women</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36493"><a href="https://hackspirit.com/category/women-in-a-relationship/">Women in a Relationship</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36490"><a href="https://hackspirit.com/category/understanding-men/">Understanding Men</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36455"><a href="/">How To For Men</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36465"><a href="https://hackspirit.com/category/attracting-women/">Attracting Women</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36462"><a href="https://hackspirit.com/category/advice-for-single-men/">Advice for Single Men</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36474"><a href="https://hackspirit.com/category/men-in-a-relationship/">Men in a Relationship</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36491"><a href="https://hackspirit.com/category/understanding-women/">Understanding Women</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36456"><a href="/">Relationships</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36467"><a href="https://hackspirit.com/category/dating-advice/">Dating Advice</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36478"><a href="https://hackspirit.com/category/relationship-advice/">Relationship Advice</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36471"><a href="https://hackspirit.com/category/marriage-tips/">Marriage Tips</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36466"><a href="https://hackspirit.com/category/cheating-in-relationships/">Cheating in Relationships</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36457"><a href="/">Break Ups</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36469"><a href="https://hackspirit.com/category/how-to-get-your-ex-back/">How to Get Your Ex Back</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36470"><a href="https://hackspirit.com/category/how-to-move-on-from-a-relationship/">How to Move on From a Relationship</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36482"><a href="https://hackspirit.com/category/should-you-end-a-relationship/">Should You End a Relationship?</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36486"><a href="https://hackspirit.com/category/strengthening-your-relationship/">Strengthening Your Relationship</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36458"><a href="/">Life</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36468"><a href="https://hackspirit.com/category/eastern-philosophy/">Eastern Philosophy</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36492"><a href="https://hackspirit.com/category/western-philosophy/">Western Philosophy</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36473"><a href="https://hackspirit.com/category/meditation/">Meditation</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-36475"><a href="https://hackspirit.com/category/mindful-living/">Mindful Living</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36477"><a href="https://hackspirit.com/category/personality-traits/">Personality Traits</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36480"><a href="https://hackspirit.com/category/self-improvement/">Self Improvement</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36481"><a href="https://hackspirit.com/category/self-love/">Self Love</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36483"><a href="https://hackspirit.com/category/society/">Society</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36487"><a href="https://hackspirit.com/category/toxic-relationships/">Toxic Relationships</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36459"><a href="/">Spirituality</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36484"><a href="https://hackspirit.com/category/soulmates/">Soulmates</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36488"><a href="https://hackspirit.com/category/twin-flames/">Twin Flames</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36485"><a href="https://hackspirit.com/category/spiritual-signs/">Spiritual Signs</a></li>
+</ul>
+</li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36460"><a href="/">Reviews</a>
+<ul class="sub-menu">
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36472"><a href="https://hackspirit.com/category/masterclass/">MasterClass</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36476"><a href="https://hackspirit.com/category/mindvalley-reviews/">Mindvalley</a></li>
+<li class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-36479"><a href="https://hackspirit.com/category/relationship-guides/">Relationship Guides</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul></nav> 
+
+
+<ul id="g1-social-icons-1" class="g1-socials-items g1-socials-items-tpl-grid">
+<li class="g1-socials-item g1-socials-item-facebook">
+<a class="g1-socials-item-link" href="https://facebook.com/hackspiritorg/" target="_blank" rel="noopener">
+<span class="g1-socials-item-icon g1-socials-item-icon-48 g1-socials-item-icon-text g1-socials-item-icon-facebook"></span>
+<span class="g1-socials-item-tooltip">
+<span class="g1-socials-item-tooltip-inner">Facebook</span>
+</span>
+</a>
+</li>
+<li class="g1-socials-item g1-socials-item-twitter">
+<a class="g1-socials-item-link" href="https://twitter.com/hackspiritorg/" target="_blank" rel="noopener">
+<span class="g1-socials-item-icon g1-socials-item-icon-48 g1-socials-item-icon-text g1-socials-item-icon-twitter"></span>
+<span class="g1-socials-item-tooltip">
+<span class="g1-socials-item-tooltip-inner">Twitter</span>
+</span>
+</a>
+</li>
+</ul>
+</div>
+<div class="g1-canvas-background">
+</div>
+</div>
+</div>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NF3DN9C"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+<script>
+setInterval(() => {
+    // Get page elements
+    const elementorPage = document.querySelector('[class*="elementor"]')
+    const adThriveLoaded = document.getElementsByTagName('body')[0].classList.contains('adthrive-device-phone')  ||
+                           document.getElementsByTagName('body')[0].classList.contains('adthrive-device-tablet') ||
+                           document.getElementsByTagName('body')[0].classList.contains('adthrive-device-desktop')
+
+    // Check if AdThrive is loaded
+    if (!adThriveLoaded) {
+        console.log('Waiting for AdThrive...')
+        return
+    }
+
+    // Check if page is using Elementor
+    if (elementorPage) {
+        // Get ads
+        const ads = document.querySelectorAll(".adthrive-ad iframe");
+        for (const ad in ads) {
+            // Get ad width
+            const adWidth = ads[ad].width;
+            // Check if width is a specific value
+            if (typeof adWidth !== "undefined" && adWidth !== "1") {
+                // Apply specific width value as inline style
+                jQuery(ads[ad]).css("width", adWidth);
+            }
+        }
+    }
+}, 50);
+</script> 
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript'>
+        document.addEventListener( 'wpcf7mailsent', function( event ) {
+        if( "fb_pxl_code" in event.detail.apiResponse){
+          eval(event.detail.apiResponse.fb_pxl_code);
+        }
+      }, false );
+    </script>
+
+<div id='fb-pxl-ajax-code'></div><link data-minify="1" rel='stylesheet' id='g1-socials-basic-screen-css' href='https://hackspirit.com/wp-content/cache/min/1/wp-content/plugins/g1-socials/css/screen-basic.min.css?ver=1679558691' type='text/css' media='all' />
+<link rel='stylesheet' id='g1-socials-snapcode-css' href='https://hackspirit.com/wp-content/plugins/g1-socials/css/snapcode.min.css?ver=1.2.27' type='text/css' media='all' />
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/cache/min/1/wp-content/plugins/auto-advance-for-gravity-forms/js/aafg_script.js?ver=1679558691' id='auto-trigger-next-js'></script>
+<script type='text/javascript' id='site_tracking-js-extra'>
+/* <![CDATA[ */
+var php_data = {"ac_settings":{"tracking_actid":611368306,"site_tracking_default":1},"user_email":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/cache/min/1/wp-content/plugins/activecampaign-subscription-forms/site_tracking.js?ver=1679558691' id='site_tracking-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.9' id='regenerator-runtime-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='contact-form-7-js-extra'>
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/hackspirit.com\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='mace-gallery-js-extra'>
+/* <![CDATA[ */
+var macegallery = "{\"i18n\":{\"of\":\"of\"},\"html\":\"\\n<div class=\\\"g1-gallery-wrapper g1-gallery-dark\\\">\\n\\t<div class=\\\"g1-gallery\\\">\\n\\t\\t<div class=\\\"g1-gallery-header\\\">\\n\\t\\t\\t<div class=\\\"g1-gallery-header-left\\\">\\n\\t\\t\\t\\t<div class=\\\"g1-gallery-logo\\\">\\n\\t\\t\\t\\t\\t\\t\\t\\t<\\\/div>\\n\\t\\t\\t\\t<div class=\\\"g1-gallery-title g1-gamma g1-gamma-1st\\\">{title}<\\\/div>\\n\\t\\t\\t<\\\/div>\\n\\t\\t\\t<div class=\\\"g1-gallery-header-right\\\">\\n\\t\\t\\t\\t<div class=\\\"g1-gallery-back-to-slideshow\\\">Back to slideshow<\\\/div>\\n\\t\\t\\t\\t<div class=\\\"g1-gallery-thumbs-button\\\"><\\\/div>\\n\\t\\t\\t\\t<div class=\\\"g1-gallery-numerator\\\">{numerator}<\\\/div>\\n\\t\\t\\t\\t<div class=\\\"g1-gallery-close-button\\\"><\\\/div>\\n\\t\\t\\t<\\\/div>\\n\\t\\t<\\\/div>\\n\\t\\t<div class=\\\"g1-gallery-body\\\">\\n\\t\\t\\t<div class=\\\"g1-gallery-frames\\\">\\n\\t\\t\\t\\t{frames}\\n\\t\\t\\t<\\\/div>\\n\\t\\t\\t<div class=\\\"g1-gallery-thumbnails32\\\">\\n\\t\\t\\t\\t<div class=\\\"g1-gallery-thumbnails-collection\\\">\\n\\t\\t\\t\\t\\t{thumbnails32}\\n\\t\\t\\t\\t<\\\/div>\\n\\t\\t\\t<\\\/div>\\n\\t\\t\\t<div class=\\\"g1-gallery-sidebar\\\">\\n\\t\\t\\t\\t\\t<div class=\\\"g1-gallery-shares\\\">\\n\\t\\t\\t\\t\\t<\\\/div>\\n\\t\\t\\t\\t\\t<div class=\\\"g1-gallery-ad\\\"><\\\/div>\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t<div class=\\\"g1-gallery-thumbnails\\\">\\n\\t\\t\\t\\t\\t\\t\\t<div class=\\\"g1-gallery-thumbnails-up\\\"><\\\/div>\\n\\t\\t\\t\\t\\t\\t\\t<div class=\\\"g1-gallery-thumbnails-collection\\\">{thumbnails}<\\\/div>\\n\\t\\t\\t\\t\\t\\t\\t<div class=\\\"g1-gallery-thumbnails-down\\\"><\\\/div>\\n\\t\\t\\t\\t\\t\\t<\\\/div>\\n\\t\\t\\t\\t\\t\\t\\t\\t<\\\/div>\\n\\t\\t<\\\/div>\\n\\t<\\\/div>\\n<\\\/div>\\n\",\"shares\":\"\"}";
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/cache/min/1/wp-content/plugins/media-ace/includes/gallery/js/gallery.js?ver=1679558691' id='mace-gallery-js'></script>
+<script type='text/javascript' id='post-views-counter-frontend-js-extra'>
+/* <![CDATA[ */
+var pvcArgsFrontend = {"mode":"js","postID":"9201","nonce":"a231c28d50","requestURL":"https:\/\/hackspirit.com\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/cache/min/1/wp-content/plugins/post-views-counter/js/frontend.js?ver=1679558691' id='post-views-counter-frontend-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/plugins/table-of-contents-plus/front.min.js?ver=2106' id='toc-front-js'></script>
+<script type='text/javascript' id='tap-disclosure-notice-js-extra'>
+/* <![CDATA[ */
+var tap_disclosure_notice_vars = {"disclosure_page":"https:\/\/hackspirit.com\/affiliate-disclosure\/","display_icon":"","notice_icon_message":"This is an affiliate link. See our {{disclosure_link}}.","display_bottom_post":"","bottom_post_message":"<h4>AFFILIATE DISCLOSURE:<\/h4>\r\nThis article may contain affiliate links. See our {{disclosure_link}} for more information.","notice_link_text":"disclosure notice","post_type":"post","post_id":"9201","content_selector":"body #post-%d"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/cache/min/1/wp-content/plugins/thirstyaffiliates-pro/js/app/disclosure-notice/dist/disclosure-notice.js?ver=1679558691' id='tap-disclosure-notice-js'></script>
+<script type='text/javascript' id='ta_main_js-js-extra'>
+/* <![CDATA[ */
+var thirsty_global_vars = {"home_url":"\/\/hackspirit.com","ajax_url":"https:\/\/hackspirit.com\/wp-admin\/admin-ajax.php","link_fixer_enabled":"yes","link_prefix":"go","link_prefixes":{"0":"recommends","3":"go"},"post_id":"9201","enable_record_stats":"yes","enable_js_redirect":"","disable_thirstylink_class":""};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/cache/min/1/wp-content/plugins/thirstyaffiliates/js/app/ta.js?ver=1679558691' id='ta_main_js-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(?:.+\/)?feed(?:\/(?:.+\/?)?)?$|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|\/bros\/|\/go\/","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|pdf|doc|docx|xls|xlsx|php|html|htm","siteUrl":"https:\/\/hackspirit.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/plugins/advanced-ads-pro/assets/js/advanced-ads-pro.min.js?ver=2.17.2' id='advanced-ads-pro/front-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/themes/bimber/js/stickyfill/stickyfill.min.js?ver=2.0.3' id='stickyfill-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/themes/bimber/js/jquery.placeholder/placeholders.jquery.min.js?ver=4.0.1' id='jquery-placeholder-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/cache/min/1/wp-content/themes/bimber/js/jquery.timeago/jquery.timeago.js?ver=1679558691' id='jquery-timeago-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/cache/min/1/wp-content/themes/bimber/js/jquery.timeago/locales/jquery.timeago.en.js?ver=1679558691' id='jquery-timeago-en-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/cache/min/1/wp-content/themes/bimber/js/matchmedia/matchmedia.js?ver=1679558691' id='match-media-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/cache/min/1/wp-content/themes/bimber/js/matchmedia/matchmedia.addlistener.js?ver=1679558691' id='match-media-add-listener-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/themes/bimber/js/picturefill/picturefill.min.js?ver=2.3.1' id='picturefill-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/themes/bimber/js/jquery.waypoints/jquery.waypoints.min.js?ver=4.0.0' id='jquery-waypoints-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/themes/bimber/js/enquire/enquire.min.js?ver=2.1.2' id='enquire-js'></script>
+<script type='text/javascript' id='bimber-global-js-extra'>
+/* <![CDATA[ */
+var bimber_front_config = {"debug_mode":"","ajax_url":"https:\/\/hackspirit.com\/wp-admin\/admin-ajax.php","timeago":"off","sharebar":"off","i18n":{"menu":{"go_to":"Go to"},"newsletter":{"subscribe_mail_subject_tpl":"Check out this great article: %subject%"},"bp_profile_nav":{"more_link":"More"}},"comment_types":["wp"],"auto_load_limit":"10","auto_play_videos":"","use_gif_player":"1","setTargetBlank":"1","useWaypoints":"1","stack":"original"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/cache/min/1/wp-content/themes/bimber/js/global.js?ver=1679558691' id='bimber-global-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/cache/min/1/wp-content/themes/bimber/js/libgif/libgif.js?ver=1679558691' id='libgif-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/cache/min/1/wp-content/themes/bimber/js/players.js?ver=1679558691' id='bimber-players-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.1' id='jquery-ui-core-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-includes/js/jquery/ui/menu.min.js?ver=1.13.1' id='jquery-ui-menu-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-includes/js/dist/dom-ready.min.js?ver=d996b53411d1533a84951212ab6ac4ff' id='wp-dom-ready-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-includes/js/dist/hooks.min.js?ver=c6d64f2cb8f5c6bb49caca37f8828ce3' id='wp-hooks-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-includes/js/dist/i18n.min.js?ver=ebee46757c6a411e38fd079a7ac71d94' id='wp-i18n-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='wp-i18n-js-after'>
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-includes/js/dist/a11y.min.js?ver=a38319d7ba46c6e60f7f9d4c371222c5' id='wp-a11y-js'></script>
+<script type='text/javascript' id='jquery-ui-autocomplete-js-extra'>
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-includes/js/jquery/ui/autocomplete.min.js?ver=1.13.1' id='jquery-ui-autocomplete-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/cache/min/1/wp-content/themes/bimber/js/single.js?ver=1679558691' id='bimber-single-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/themes/bimber-child-theme/modifications.js' id='bimber-child-js'></script>
+<script type='text/javascript' id='advanced-ads-pro/cache_busting-js-extra'>
+/* <![CDATA[ */
+var advanced_ads_pro_ajax_object = {"ajax_url":"https:\/\/hackspirit.com\/wp-admin\/admin-ajax.php","lazy_load_module_enabled":"1","lazy_load":{"default_offset":100,"offsets":[]},"moveintohidden":"","wp_timezone_offset":"0"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/plugins/advanced-ads-pro/assets/js/base.min.js?ver=2.17.2' id='advanced-ads-pro/cache_busting-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://hackspirit.com/wp-content/cache/min/1/wp-content/themes/bimber-child-theme/scripts.js?ver=1679558691' id='-theme-js'></script>
+<script type="rocketlazyloadscript" data-minify="1" src="https://hackspirit.com/wp-content/cache/min/1/09a296a0655161f6b05c8eea77718b77be15418c.js?ver=1679558691" data-rocket-type="text/javascript" charset="utf-8" async="async"></script><script type="rocketlazyloadscript">window.advads_admin_bar_items = [{"title":"Head for disabling ads","type":"placement"},{"title":"Head for disabling ads 2","type":"placement"},{"title":"Affiliate disclosure","type":"ad"},{"title":"FB placement (FB traffic)","type":"placement"},{"title":"After content (ex back)","type":"placement"},{"title":"After content (marriage repair)","type":"placement"},{"title":"After content (relationships)","type":"placement"},{"title":"Bottom of article (affiliate disclosure)","type":"placement"},{"title":"Bottom of content (female mind control handbook)","type":"placement"},{"title":"Justin Brown articles bottom","type":"placement"},{"title":"Lachlan\\&#039;s articles (after content)","type":"placement"},{"title":"Tina Fey articles bottom","type":"placement"},{"title":"Mid-article (ex back tags) 2","type":"placement"},{"title":"Ex factor mid article pitches","type":"group"},{"title":"Mid-article (marriage)","type":"placement"},{"title":"Mend the marriage mid article pitches","type":"group"},{"title":"Mid-article (obsession method)","type":"placement"},{"title":"Obsession method mid article pitches","type":"group"}];</script><script type="rocketlazyloadscript">window.advads_passive_placements = {"after-content-vid_1":{"type":"group","id":148,"elementid":["hacks-3a9aede1b5ac3a40a0b7a252c1a63b6f"],"ads":{"51877":{"id":51877,"title":"Buddhism ebook bottom of article","expiry_date":0,"visitors":[],"content":"<div style=\"background-color: #f7f7f7; padding: 0.5em 1.2em 0.5em 1.2em;\">\n<h2 style=\"text-align: left;\">The Secret to a Better Life?<\/h2>\n<p><a href=\"https:\/\/a.co\/d\/3LTP50r\"><img decoding=async  class=\"wp-image-51879 alignleft\" src=\"https:\/\/mlhmvq6amqed.i.optimole.com\/HIId8M4.WANK~27a14\/w:auto\/h:auto\/q:mauto\/f:avif\/https:\/\/hackspirit.com\/wp-content\/uploads\/2022\/11\/ebook-hack-spirit.png\" alt=\"\" width=\"350\" height=\"350\" srcset=\"https:\/\/mlhmvq6amqed.i.optimole.com\/HIId8M4.WANK~27a14\/w:500\/h:500\/q:mauto\/f:avif\/https:\/\/hackspirit.com\/wp-content\/uploads\/2022\/11\/ebook-hack-spirit.png 500w, https:\/\/mlhmvq6amqed.i.optimole.com\/HIId8M4.WANK~27a14\/w:300\/h:300\/q:mauto\/f:avif\/https:\/\/hackspirit.com\/wp-content\/uploads\/2022\/11\/ebook-hack-spirit.png 300w, https:\/\/mlhmvq6amqed.i.optimole.com\/HIId8M4.WANK~27a14\/w:150\/h:150\/q:mauto\/f:avif\/https:\/\/hackspirit.com\/wp-content\/uploads\/2022\/11\/ebook-hack-spirit.png 150w, https:\/\/mlhmvq6amqed.i.optimole.com\/HIId8M4.WANK~27a14\/w:192\/h:192\/q:mauto\/f:avif\/https:\/\/hackspirit.com\/wp-content\/uploads\/2022\/11\/ebook-hack-spirit.png 192w, https:\/\/mlhmvq6amqed.i.optimole.com\/HIId8M4.WANK~27a14\/w:384\/h:384\/q:mauto\/f:avif\/https:\/\/hackspirit.com\/wp-content\/uploads\/2022\/11\/ebook-hack-spirit.png 384w, https:\/\/mlhmvq6amqed.i.optimole.com\/HIId8M4.WANK~27a14\/w:110\/h:110\/q:mauto\/f:avif\/https:\/\/hackspirit.com\/wp-content\/uploads\/2022\/11\/ebook-hack-spirit.png 110w, https:\/\/mlhmvq6amqed.i.optimole.com\/HIId8M4.WANK~27a14\/w:220\/h:220\/q:mauto\/f:avif\/https:\/\/hackspirit.com\/wp-content\/uploads\/2022\/11\/ebook-hack-spirit.png 220w, https:\/\/mlhmvq6amqed.i.optimole.com\/HIId8M4.WANK~27a14\/w:265\/h:265\/q:mauto\/f:avif\/https:\/\/hackspirit.com\/wp-content\/uploads\/2022\/11\/ebook-hack-spirit.png 265w, https:\/\/mlhmvq6amqed.i.optimole.com\/HIId8M4.WANK~27a14\/w:364\/h:364\/q:mauto\/f:avif\/https:\/\/hackspirit.com\/wp-content\/uploads\/2022\/11\/ebook-hack-spirit.png 364w\" sizes=\"(max-width: 350px) 100vw, 350px\" \/><\/a><\/p>\n<p>Hi. I\u2019m Lachlan Brown, the founder of Hack Spirit.<\/p>\n<p>I want you to know that if you\u2019re struggling with feelings of anxiety, confusion, and frustration, it\u2019s okay.<\/p>\n<p>You see, I\u2019ve been there too.<\/p>\n<p>In <a href=\"https:\/\/a.co\/d\/3LTP50r\">my new eBook<\/a>, I take you on a journey from my days as a lost 20-something hefting TVs in a warehouse to embracing Buddhism and creating the life of my dreams.<\/p>\n<p>And I reveal a step-by-step process for you to transform your life in the same way\u2026<\/p>\n<p>If you\u2019re ready to finally escape the life traps you\u2019ve been stuck in, this eBook is what you\u2019ve been waiting for.<\/p>\n<p>Trust me, if I can use the teachings of Buddhism to brighten and empower my life, you can too.<\/p>\n<p><a href=\"https:\/\/a.co\/d\/3LTP50r\">Check out my new eBook here.<\/a><\/p>\n<\/div>\n<p>&nbsp;<\/p>\n","once_per_page":0,"debugmode":false,"blog_id":1,"type":"content","position":"","privacy":{"ignore":false,"needs_consent":false}},"42465":{"id":42465,"title":"Life Journal bottom of article","expiry_date":0,"visitors":[],"content":"<div style=\"background-color: #f7f7f7; padding: 0.2em 1.2em 0.2em 1.2em;\">\n<h2>Putting yourself first<\/h2>\n<p>What\u2019s your number one goal at the moment?<\/p>\n<p>Is it to buy that car you\u2019ve been saving up for?<\/p>\n<p>To finally start that side-hustle that\u2019ll hopefully help you quit your 9-5 one day?<\/p>\n<p>Or to take the leap and finally ask your partner to move in?<\/p>\n<p>Whatever your goals are, there&#8217;s a hidden trap in how you set them.<\/p>\n<p>The trap is this:<\/p>\n<p>You&#8217;ll only experience genuine life satisfaction when your goals are aligned with your values.<\/p>\n<p>Because when values and goals are aligned, you enjoy the journey much more. And this makes achieving your goals much more likely.<\/p>\n<p>If you find it hard to articulate your deeper life values, I suggest downloading the free values exercise by career coach Jeanette Brown.<\/p>\n<p>It takes only a couple of minutes and will reveal a number of powerful insights about your underlying values.<\/p>\n<p><a href=\"https:\/\/thevessel.io\/values-exercise-life-journal\/#a_aid=888&amp;data1=bottompitchvaluesexercise\" target=\"_blank\" rel=\"noopener\">Click here to download the free values exercise.<\/a><\/p>\n<\/div>\n<p>&nbsp;<\/p>\n","once_per_page":0,"debugmode":false,"blog_id":1,"type":"content","position":"","privacy":{"ignore":false,"needs_consent":false}},"55187":{"id":55187,"title":"Purpose bottom of article","expiry_date":0,"visitors":[],"content":"<div style=\"background-color: #f7f7f7; padding: 0.2em 1.2em 0.2em 1.2em;\">\n<h2>Discover your purpose in life: A new technique<\/h2>\n<p>Tired of feeling unfulfilled? Searching for more meaning in your life?<\/p>\n<p>Then check out the new approach to finding your purpose in life.<\/p>\n<p>It&#8217;s a weird, new way to discover your true life purpose without using the traditional method of creative visualization.<\/p>\n<p>In just a few minutes, you&#8217;ll learn the new technique and instantly have a deep and profound understanding of what you&#8217;re meant to do in your life.<\/p>\n<p>When you find your purpose, you have more zest for life, increased energy and a sense of empowerment.<\/p>\n<p><a href=\"https:\/\/thevessel.io\/sp\/the-hidden-trap-find-your-purpose-vsl\/\" target=\"_blank\" rel=\"noopener\">Learn more here.<\/a><\/p>\n<\/div>\n<p>&nbsp;<\/p>\n","once_per_page":0,"debugmode":false,"blog_id":1,"type":"content","position":"","privacy":{"ignore":false,"needs_consent":false}}},"group_info":{"id":148,"name":"After content (vid)","weights":{"51877":10,"42465":10,"55187":10},"type":"default","ordered_ad_ids":[51877,42465,55187],"ad_count":1},"placement_info":{"type":"post_bottom","name":"After content (vid)","item":"group_148","options":{"placement_position":"","lazy_load":"disabled"},"id":"after-content-vid"},"test_id":null,"group_wrap":[{"before":"<div class=\"hacks-after-content-vid\" id=\"hacks-8181001\">","after":"<\/div>"}],"inject_before":[""]}};
+window.advads_has_ads = [["22892","ad","Affiliate disclosure","off"]];
+( window.advanced_ads_ready || jQuery( document ).ready ).call( null, function() {if ( !window.advanced_ads_pro ) {console.log("Advanced Ads Pro: cache-busting can not be initialized");} });</script> <script type="rocketlazyloadscript" data-rocket-type="text/javascript">
+            var thirstyGoogleClickTrack = function ( e ) {
+
+                var $this       = jQuery( this ),
+                    linkID      = $this.data( 'linkid' ),
+                    href        = linkID ? $this.attr( 'href' ) : thirstyFunctions.isThirstyLink( $this.attr( 'href' ) ),
+                    action_name = 'Affiliate Link',
+                    page_slug   = '/25-beautiful-short-poems-that-will-tug-at-your-heart-strings/',
+                    home_url    = 'https://hackspirit.com';
+
+                if ( ! href || typeof ga !== 'function' ) {
+                    return;
+                }
+
+                var is_uncloak  = href.indexOf( home_url + '/' + thirsty_global_vars.link_prefix ) < 0,
+                    href_parts  = href.split('/'),
+                    href_last   = href_parts[ href_parts.length - 1 ] ? href_parts[ href_parts.length - 1 ] : href_parts[ href_parts.length - 2 ],
+                    link_text   = $this.text(),
+                    link_uri    = linkID && is_uncloak ? href : href.replace( home_url , '' ),
+                    link_slug   = linkID && is_uncloak ? href : href_last;
+
+                ga( 'send' , 'event' , {
+                    eventCategory : action_name,
+                    eventAction   : link_uri,
+                    eventLabel    : page_slug,
+                    transport     : 'beacon'
+                } );
+            };
+
+            jQuery( document ).ready( function($) {
+                $( 'body' ).on( 'click', 'a', thirstyGoogleClickTrack );
+            });
+        </script>
+<script type="rocketlazyloadscript">!function(){window.advanced_ads_ready_queue=window.advanced_ads_ready_queue||[],advanced_ads_ready_queue.push=window.advanced_ads_ready;for(var d=0,a=advanced_ads_ready_queue.length;d<a;d++)advanced_ads_ready(advanced_ads_ready_queue[d])}();</script><script>window.lazyLoadOptions={elements_selector:"iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(var i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://hackspirit.com/wp-content/plugins/wp-rocket/assets/js/lazyload/17.5/lazyload.min.js"></script><script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script></body>
+</html>
