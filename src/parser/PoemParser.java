@@ -21,6 +21,8 @@ import java.util.regex.Pattern;
  * After that, it will process the poem into a database where it will then track
  * the total frequency of the words that appear in a poem. There is no limit for how long of a poem you can put in.
  * The database will be wiped with each new poem you get the top twenty words from.
+ * The poem parser also has unit tests to ensure that any changes made to the software will comply with the operating
+ * expectations.
  *
  */
 public class PoemParser {
