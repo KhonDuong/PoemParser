@@ -121,6 +121,14 @@ public class PoemParser {
         return wordOccurrenceList;
     }
 
+    /**
+     * Checks the database to see if the word exists,
+     * adds it if it doesn't,
+     * increases the frequency if it does.
+     *
+     * @param filteredPoem      the formatted text of the poem in uppercase, no punctuation or HTML
+     * @return                  returns an ArrayList of the most used words and how many times used as KV pair
+     */
     public ArrayList<Map.Entry<String, Integer>> mostUsedWordsDBConnection(String filteredPoem)
     {
         DatabaseConnection databaseConnection = new DatabaseConnection();

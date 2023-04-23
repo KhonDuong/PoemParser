@@ -8,6 +8,10 @@ public class DatabaseConnection {
     private String user = "root";
     private String password = "#Arrow31";
 
+    /**
+     * @param word      the word you want to check if it exists in the database
+     * @return          returns true if it does exist, else returns false
+     */
     public boolean wordExists(String word) {
         try (Connection connection = DriverManager.getConnection(url, user, password)) {
             try (Statement statement = connection.createStatement()) {
@@ -26,6 +30,10 @@ public class DatabaseConnection {
         return false;
     }
 
+    /**
+     * @param word      the word you want the frequency of
+     * @return          frequency as an integer of how many times the word occurs in the poem
+     */
     public int getWordFrequency(String word) {
         try (Connection connection = DriverManager.getConnection(url, user, password)) {
             try (Statement statement = connection.createStatement()) {
@@ -45,6 +53,9 @@ public class DatabaseConnection {
         return 0;
     }
 
+    /**
+     * @param word      the word to be added to the database
+     */
     public void addNewWord(String word) {
         try (Connection connection = DriverManager.getConnection(url, user, password)) {
             try (Statement statement = connection.createStatement()) {
@@ -57,6 +68,12 @@ public class DatabaseConnection {
         }
     }
 
+    /**
+     * Lets you dynamically set the frequency of a word to whatever you would like.
+     *
+     * @param word          the word that you want to change the frequency of
+     * @param frequency     the frequency you would like to set it to
+     */
     public void updateWordFrequency(String word, int frequency) {
         try (Connection connection = DriverManager.getConnection(url, user, password)) {
             try (Statement statement = connection.createStatement()) {
@@ -81,6 +98,11 @@ public class DatabaseConnection {
         }
     }
 
+    /**
+     * Returns the top 20 words from the database sorted by frequency in descending order.
+     *
+     * @return      returns an ArrayList of the most used words and how many times used as KV pair
+     */
     public ArrayList<Map.Entry<String, Integer>> getTopTwentyWords() {
         HashMap<String, Integer> wordOccurrenceMap = new HashMap<>();
 
