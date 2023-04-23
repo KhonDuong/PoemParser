@@ -117,8 +117,25 @@ public class PoemParser {
         ArrayList<Map.Entry<String, Integer>> wordOccurrenceList = new ArrayList<>(wordOccurrenceMap.entrySet());
         Collections.sort(wordOccurrenceList, Map.Entry.comparingByValue(Comparator.reverseOrder())); // Reverse order for DESC. Normally ASC.
 
-        System.out.println(wordOccurrenceList.get(0));
+        // System.out.println(wordOccurrenceList.get(0));
         return wordOccurrenceList;
+    }
+
+    public ArrayList<Map.Entry<String, Integer>> mostUsedWordsDBConnection(String filteredPoem)
+    {
+        DatabaseConnection databaseConnection = new DatabaseConnection();
+        databaseConnection.deleteWords();
+
+        String[] wordArray = filteredPoem.split(" ");
+        for (String word : wordArray) {
+            if (databaseConnection.wordExists(word)) {
+                databaseConnection.updateWordFrequency(word, databaseConnection.getWordFrequency(word) + 1);
+            } else {
+                databaseConnection.addNewWord(word);
+            }
+        }
+
+        return databaseConnection.getTopTwentyWords();
     }
 
     public void createUI()
@@ -199,7 +216,7 @@ public class PoemParser {
                 // This order of functions used to be in main to get the file, filter it down to just the contents of the poem, and then to output the most used words in the poem.
                 String output = this.getHTMLAsString(chooser.getSelectedFile().getName());
                 output = this.filterToPoem(output, TextFormatter.formatText(poemTitleField.getText()), TextFormatter.formatText(poemEndField.getText()));
-                ArrayList<Map.Entry<String, Integer>> wordOccurrenceList = this.mostUsedWords(output);
+                ArrayList<Map.Entry<String, Integer>> wordOccurrenceList = this.mostUsedWordsDBConnection(output);
 
                 // Create the text that goes into the final label of top twenty words.
                 String htmlText = "<html>Here are the top twenty most used words in your poem.<br><br>";
