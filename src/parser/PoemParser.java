@@ -10,6 +10,19 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * The Poem Parser has three total classes that are all required for the program to function successfully.
+ * The Poem Parser has functions related to the actual parsing, filtering, and displaying of the total words of the poem.
+ * The Database Connection is used to store the words and their total frequencies in a MySQL database.
+ * The Text Formatter filters out any unwanted characters that may appear as a result of web formatting.
+ *
+ * The Poem Parser in its entirety is able to filter out to the exact line that you indicate,
+ * extract just the contents of the poem, and end where you indicate the final line of the poem is.
+ * After that, it will process the poem into a database where it will then track
+ * the total frequency of the words that appear in a poem. There is no limit for how long of a poem you can put in.
+ * The database will be wiped with each new poem you get the top twenty words from.
+ *
+ */
 public class PoemParser {
     /**
      * HTML can't be used with scanner directly,
